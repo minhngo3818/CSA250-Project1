@@ -41,7 +41,7 @@ int main()
 	member2.printMemberInfo;
 	~member2;
 	std::string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-	std::cout << line << std::endl;
+	std::cout << line << std::endl; //comment
 	//donor class testing
 	DonorType donor1;
 	DonorType donor2("Mark", "Smith", 3, 3.41);
