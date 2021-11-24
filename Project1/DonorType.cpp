@@ -14,7 +14,7 @@ DonorType::DonorType(const std::string& newFirstName,
 	const std::string& newLastName,
 	int newMembershipNum,
 	double newAmountDonated) : MemberType{ newFirstName,
-									newLastName, newMembershipNum } {}
+					newLastName, newMembershipNum } {}
 {
 	// Function body
 }
