@@ -23,8 +23,10 @@ class MemberType
 {
 	public:
 		MemberType();
-		MemberType(const std::string& newFirstName, const std::string& newLastName, int newMembershipNo);
-		void setMemberInfo(const std::string& newFirstName, const std::string& newLastName, int newMembershipNo);
+		MemberType(const std::string& newFirstName,
+			const std::string& newLastName, int newMembershipNo);
+		void setMemberInfo(const std::string& newFirstName,
+			const std::string& newLastName, int newMembershipNo);
 		std::string getFirstName() const;
 		std::string getLastName() const;
 		int getMembershipNo() const;

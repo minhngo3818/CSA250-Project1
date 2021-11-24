@@ -17,15 +17,19 @@
 using namespace std;
 
 
-MemberType::MemberType() : firstName(""), lastName(""), membershipNo(0){}
+MemberType::MemberType() : firstName(""),
+	lastName(""), membershipNo(0){}
 
 
-MemberType::MemberType(const string& newFirstName, const string& newLastName, int newMembershipNo)
-	: firstName(newFirstName), lastName(newLastName), membershipNo(newMembershipNo) {}
+MemberType::MemberType(const string& newFirstName,
+	const string& newLastName, int newMembershipNo)
+	: firstName(newFirstName), lastName(newLastName),
+			membershipNo(newMembershipNo) {}
 
 
 
-void MemberType::setMemberInfo(const string& newFirstName, const string& newLastName, int newMembershipNo)
+void MemberType::setMemberInfo(const string& newFirstName,
+	const string& newLastName, int newMembershipNo)
 {
 	firstName = newFirstName;
 	lastName = newLastName;
