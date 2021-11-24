@@ -17,6 +17,7 @@
 #define DONORTYPE_H
 
 #include "MemberType.h"
+
 #include <string>
 
 class DonorType : public MemberType
