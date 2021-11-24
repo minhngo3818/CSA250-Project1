@@ -1,3 +1,18 @@
+/*
+	Night Owls
+	
+	Breton, Liam (leader)
+	Ta, Hoa
+	Ngo, Minh
+	Richardson, Nick
+	Riana, Ali
+	
+	November 22, 2021
+	
+	CSA 250
+	Project 1
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -11,7 +26,6 @@ DonorType::DonorType()
 	amountDonated = 0.0;
 }
 
-
 DonorType::DonorType
 	(const string& newFirstName, const string& newLastName,
 		int newMembershipNum, double newAmountDonated) 
@@ -19,7 +33,6 @@ DonorType::DonorType
 {
 	amountDonated = newAmountDonated;
 }
-
 
 void DonorType::setDonorInfo(const string& newFirstName, const string& newLastName,
 	int newMembershipNum, double newAmountDonated) 
@@ -29,12 +42,10 @@ void DonorType::setDonorInfo(const string& newFirstName, const string& newLastNa
 	amountDonated = newAmountDonated;
 }
 
-
 void DonorType::setAmountDonated(double newAmountDonated)
 {
 	amountDonated = newAmountDonated;
 }
-
 
 double DonorType::getAmountDonated() const
 {
@@ -47,12 +58,10 @@ void DonorType::printDonor() const
 	printMemberInfo();
 }
 
-
 void DonorType::printDonation() const
 {
 	cout << getLastName() << ", " << getFirstName << 
 		"\n    Donnation amount: $" << setprecision(2) << fixed << amountDonated << endl;
 }
-
 
 DonorType::~DonorType() {}
