@@ -43,8 +43,6 @@ class DonorType : public MemberType
 
 	private:
 		double amountDonated;
-
-
 };
 
 #endif
