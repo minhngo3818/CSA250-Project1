@@ -14,19 +14,17 @@
 */
 
 #include "MemberType.h"
+
 using namespace std;
 
 
 MemberType::MemberType() : firstName(""),
 	lastName(""), membershipNo(0){}
 
-
 MemberType::MemberType(const string& newFirstName,
 	const string& newLastName, int newMembershipNo)
 	: firstName(newFirstName), lastName(newLastName),
 			membershipNo(newMembershipNo) {}
-
-
 
 void MemberType::setMemberInfo(const string& newFirstName,
 	const string& newLastName, int newMembershipNo)
@@ -41,7 +39,6 @@ string MemberType::getFirstName() const
 	return firstName;
 }
 
-
 string MemberType::getLastName() const
 {
 	return lastName;
@@ -51,6 +48,7 @@ int MemberType::getMembershipNo() const
 {
 	return membershipNo;
 }
+
 void MemberType::printName() const
 {
 	cout << lastName ", " << firstName << endl;
