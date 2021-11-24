@@ -8,7 +8,7 @@ class MemberType
 	private:
 		std::string firstName;
 		std::string lastName;
-		int membershipID;
+		int membershipNum;
 
 };
 
