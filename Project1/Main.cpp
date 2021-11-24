@@ -19,6 +19,7 @@ int main()
 
 	std::cout << "Hi there, This is the first project\n";
 	std::cout << "Testing";
+	std::cout << "Testing 2";
 	std::cout << std::endl;
 	system("Pause");
 	return 0;
