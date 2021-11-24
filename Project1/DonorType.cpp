@@ -4,55 +4,55 @@
 
 #include "DonorType.h"
 
+using namespace std;
+
 DonorType::DonorType()
 {
-	// Function body
+	amountDonated = 0.0;
 }
 
 
-DonorType::DonorType(const std::string& newFirstName,
-	const std::string& newLastName,
-	int newMembershipNum,
-	double newAmountDonated) : MemberType{ newFirstName,
-					newLastName, newMembershipNum } {}
+DonorType::DonorType
+	(const string& newFirstName, const string& newLastName,
+		int newMembershipNum, double newAmountDonated) 
+			: MemberType (newFirstName, newLastName, newMembershipNum)
 {
-	// Function body
+	amountDonated = newAmountDonated;
 }
 
 
-void DonorType::setDonorInfo(const std::string& newFirstName,
-	const std::string& LastName,
+void DonorType::setDonorInfo(const string& newFirstName, const string& newLastName,
 	int newMembershipNum, double newAmountDonated) 
 {
-	// Function body
+	setMemberInfo(newFirstName, newLastName, newAmountDonated);
+
+	amountDonated = newAmountDonated;
 }
 
 
 void DonorType::setAmountDonated(double newAmountDonated)
 {
-	// Function body
+	amountDonated = newAmountDonated;
 }
 
 
 double DonorType::getAmountDonated() const
 {
-	// Function body
+	return amountDonated;
 }
 
 
 void DonorType::printDonor() const
 {
-	// Function body
+	printMemberInfo();
 }
 
 
 void DonorType::printDonation() const
 {
-	// Function body
+	cout << getLastName() << ", " << getFirstName << 
+		"\n    Donnation amount: $" << setprecision(2) << fixed << amountDonated << endl;
 }
 
 
-DonorType::~DonorType()
-{
-	// Function body
-}
+DonorType::~DonorType() {}

@@ -9,15 +9,11 @@ class DonorType : public MemberType
 	public:
 		DonorType();
 
-		DonorType(const std::string& newFirstName,
-			const std::string& newLastName,
-			int newMembershipNum, 
-			double newAmountDonated) : MemberType{ newFirstName, 
-											newLastName, newMembershipNum } {};
+		DonorType(const std::string& newFirstName, const std::string& newLastName,
+			int newMembershipNum, double newAmountDonated);
 
-		void setDonorInfo(const std::string& newFirstName,
-			const std::string& LastName,
-			int newMembershipNum, double newAmountDonated) {};
+		void setDonorInfo(const std::string& newFirstName, const std::string& newLastName,
+			int newMembershipNum, double newAmountDonated);
 
 		void setAmountDonated(double newAmountDonated);
 
