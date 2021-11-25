@@ -23,6 +23,7 @@ using namespace std;
 
 int main()
 {
+	string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
 
 	cout << "--------------First Project-----------------\n";
 
@@ -32,26 +33,32 @@ int main()
 	
 	cout << "accessor & default check : N/A N/A 0" << endl
 		<< member1.getFirstName() << " " << member1.getLastName() << " "
-		<< member1.getMembershipNo() << endl;
+		<< member1.getMembershipNo() << endl << endl;
 	cout << "Testing set function..." << endl;
 	member2.printMemberInfo();
 	member2.setMemberInfo("Tommy", "Zhou", 2);
-	cout << "setMemberInfo check : 2 - Tommy Zhou" << endl;
+	cout << "setMemberInfo(\"Tommy\", \"Zhou\", 2): \n2 - Tommy Zhou" 
+		<< endl;
 	member2.printMemberInfo();
 	cout << endl;
 
 	cout << "Testing print functions..." << endl;
 	member2.printName();
 	member2.printMemberInfo();
-	member2.~MemberType();
+	cout << endl;
 
-	string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+	cout << "Testing destructor..." << endl 
+		<< "0 - " << endl;
+	member2.~MemberType();
+	member2.printMemberInfo();
+
+	
 	cout << line << endl; //comment
 
 	//donor class testing
 	DonorType donor1;
 	DonorType donor2("Mark", "Smith", 3, 3.41);
-	cout << "accessor & default check : N/A N/A 0 0.0" << endl
+	cout << "accessor & default check : N/A N/A 0 0" << endl
 		<< donor1.getFirstName() << " " << donor1.getLastName() << " "
 		<< donor1.getMembershipNo() << " " << donor1.getAmountDonated()
 		<< endl;
@@ -64,13 +71,16 @@ int main()
 	cout << endl;
 
 	cout << "Testing print functions..." << endl;
-	cout << "3 - Mark Smith";
+	cout << "3 - Mark Smith\n";
 	donor2.printDonor();
 	cout << "Smith, Mark" << endl 
 		<< "    Donation Amount: $14.23" << endl;
 	donor2.printDonation();
 	donor2.~DonorType();
 
-	system("Pause");
+	cout << line << endl;
+
+
+	/*system("Pause");*/
 	return 0;
 }

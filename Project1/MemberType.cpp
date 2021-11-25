@@ -18,8 +18,8 @@
 using namespace std;
 
 
-MemberType::MemberType() : firstName(""),
-	lastName(""), membershipNo(0) {}
+MemberType::MemberType() : firstName("N/A"),
+	lastName("N/A"), membershipNo(0) {}
 
 MemberType::MemberType(const string& newFirstName,
 	const string& newLastName, int newMembershipNo)
@@ -57,7 +57,10 @@ void MemberType::printName() const
 void MemberType::printMemberInfo() const
 {
 	cout << membershipNo << " - "  
-	<< firstName << lastName << endl;
+	<< firstName << " " << lastName << endl;
 }
 
-MemberType::~MemberType(){}
+MemberType::~MemberType()
+{
+	membershipNo = 0;
+}
