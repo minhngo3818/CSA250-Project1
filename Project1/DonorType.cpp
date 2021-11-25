@@ -21,7 +21,7 @@
 
 using namespace std;
 
-DonorType::DonorType() :amountDonated(0.0) {}
+DonorType::DonorType() : amountDonated(0.0) {}
 
 DonorType::DonorType(const string& newFirstName, const string& newLastName,
 	int newMembershipNo, double newAmountDonated)
