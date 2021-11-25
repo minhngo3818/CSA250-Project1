@@ -5,7 +5,7 @@
 	Ta, Hoa
 	Ngo, Minh
 	Richardson, Nick
-	Riana Ali
+	Riana, Ali
 
 	November 22, 2021
 
@@ -16,53 +16,61 @@
 #include "MemberType.h"
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 	
+using namespace std;
+
 int main()
 {
 
-	std::cout << "Hi there, This is the first project\n";
+	cout << "--------------First Project-----------------\n";
 
 	//member class testing
 	MemberType member1;
 	MemberType member2("Doug", "Jones", 1);
 	
-	std::cout << "accessor & default check : N/A N/A 0" << std::endl
+	cout << "accessor & default check : N/A N/A 0" << endl
 		<< member1.getFirstName() << " " << member1.getLastName() << " "
-		<< member1.getMembershipNo() << std::endl;
-	std::cout << "Testing set function..." << std::endl;
-	member2.printMemberInfo;
-	member2.setMemberInfo(Tommy, Zhou, 2);
-	std::cout << "setMemberInfo check : 2 - Tommy Zhou" << std::endl;
-	member2.printMemberInfo;
+		<< member1.getMembershipNo() << endl;
+	cout << "Testing set function..." << endl;
+	member2.printMemberInfo();
+	member2.setMemberInfo("Tommy", "Zhou", 2);
+	cout << "setMemberInfo check : 2 - Tommy Zhou" << endl;
+	member2.printMemberInfo();
+	cout << endl;
 
-	std::cout << "Testing print functions..." << std::endl;
+	cout << "Testing print functions..." << endl;
 	member2.printName();
-	member2.printMemberInfo;
-	~member2;
-	std::string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-	std::cout << line << std::endl; //comment
+	member2.printMemberInfo();
+	member2.~MemberType();
+
+	string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+	cout << line << endl; //comment
+
 	//donor class testing
 	DonorType donor1;
 	DonorType donor2("Mark", "Smith", 3, 3.41);
-	std::cout << "accessor & default check : N/A N/A 0 0.0" << std::endl
+	cout << "accessor & default check : N/A N/A 0 0.0" << endl
 		<< donor1.getFirstName() << " " << donor1.getLastName() << " "
 		<< donor1.getMembershipNo() << " " << donor1.getAmountDonated()
-		<< std::endl;
-	std::cout << "Testing set function..." << std::endl;
-	std::cout << "3.41 = " << donor2.getAmountDonated() << std::endl;
+		<< endl;
+	cout << endl;
+
+	cout << "Testing set function..." << endl;
+	cout << "3.41 = " << donor2.getAmountDonated() << endl;
 	donor2.setAmountDonated(14.23);
-	std::cout << "14.23 = " << donor2.getAmountDonated() << std::endl;
+	cout << "14.23 = " << donor2.getAmountDonated() << endl;
+	cout << endl;
 
-	std::cout << "Testing print functions..." << std::endl;
-	std::cout << "3 - Mark Smith";
+	cout << "Testing print functions..." << endl;
+	cout << "3 - Mark Smith";
 	donor2.printDonor();
-	std::cout << "Smith, Mark" << std::endl 
-		<< "   Donation Amount: $14.23" << std::endl;
+	cout << "Smith, Mark" << endl 
+		<< "   Donation Amount: $14.23" << endl;
 	donor2.printDonation();
-	~donor2;
+	donor2.~DonorType();
 
-	
 	system("Pause");
 	return 0;
 }

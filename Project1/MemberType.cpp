@@ -5,7 +5,7 @@
 	Ta, Hoa
 	Ngo, Minh
 	Richardson, Nick
-	Riana Ali
+	Riana, Ali
 
 	November 22, 2021
 
@@ -51,7 +51,7 @@ int MemberType::getMembershipNo() const
 
 void MemberType::printName() const
 {
-	cout << lastName ", " << firstName << endl;
+	cout << lastName << ", " << firstName << endl;
 }
 
 void MemberType::printMemberInfo() const

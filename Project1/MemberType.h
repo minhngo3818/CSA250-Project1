@@ -5,7 +5,7 @@
 	Ta, Hoa
 	Ngo, Minh
 	Richardson, Nick
-	Riana Ali
+	Riana, Ali
 
 	November 22, 2021
 
