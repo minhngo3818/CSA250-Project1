@@ -19,7 +19,7 @@ using namespace std;
 
 
 MemberType::MemberType() : firstName(""),
-	lastName(""), membershipNo(0){}
+	lastName(""), membershipNo(0) {}
 
 MemberType::MemberType(const string& newFirstName,
 	const string& newLastName, int newMembershipNo)
