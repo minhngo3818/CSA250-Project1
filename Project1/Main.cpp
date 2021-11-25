@@ -67,7 +67,7 @@ int main()
 	cout << "3 - Mark Smith";
 	donor2.printDonor();
 	cout << "Smith, Mark" << endl 
-		<< "   Donation Amount: $14.23" << endl;
+		<< "    Donation Amount: $14.23" << endl;
 	donor2.printDonation();
 	donor2.~DonorType();
 
