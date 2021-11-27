@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="DonorType.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemberType.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Database.h" />
     <ClInclude Include="DonorType.h" />
     <ClInclude Include="MemberType.h" />
   </ItemGroup>
