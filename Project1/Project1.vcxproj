@@ -140,13 +140,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Database.cpp" />
+    <ClCompile Include="DonorList.cpp" />
     <ClCompile Include="DonorType.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemberType.cpp" />
     <ClCompile Include="part A test.cpp" />
+    <ClCompile Include="part B test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Database.h" />
+    <ClInclude Include="DonorList.h" />
     <ClInclude Include="DonorType.h" />
     <ClInclude Include="MemberType.h" />
   </ItemGroup>
