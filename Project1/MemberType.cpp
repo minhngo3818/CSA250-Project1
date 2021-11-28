@@ -53,7 +53,7 @@ int MemberType::getMembershipNo() const
 }
 void MemberType::printName() const
 {
-	cout << lastName ", " << firstName << endl;
+	cout << lastName << ", " << firstName << endl;
 }
 
 void MemberType::printMemberInfo() const
