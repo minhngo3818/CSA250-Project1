@@ -16,7 +16,7 @@
 #ifndef DONORTYPE_H
 #define DONORTYPE_H
 
-#include "DonorType.h"
+#include "donorType.h"
 
 #include <string>
 
