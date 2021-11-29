@@ -12,22 +12,33 @@
 	CSA 250
 	Project 1
 */
+#ifndef DONORTYPE.H
+#define DONORTYPE.H
+
+
 #include "Database.h"
 #include <iostream>
 #include <string>
-#include "DonorType.h";
+#include "DonorType.h"
+
 class DonorList
 {
 public:
 	DonorList();
-	DonorList(DonorType Donor,);
+	DonorList(DonorType Donor);
+	Node* getPtrToNext(return ptrToNext);
 private:
+	Node* ptrToNext;
+	Node* ptrToFirst;
+	Node* ptrToLast;
+	int count;
+
 };
 
 class Node
 {
 public:
-	Node() : data(0), ptrToNext(nullptr) {}
+	Node() : DonorType Donor , ptrToNext(nullptr) {}
 	Node(int theData, Node* newPtrToNext)
 		: data(theData), ptrToNext(newPtrToNext) {}
 	Node* getPtrToNext() const { return ptrToNext; }
@@ -43,4 +54,4 @@ private:
 	Node* ptrToNext; 
 };
 
-// Sorry guys had an 9 hour shift then tried to do what I could running on fumes. Heading in now so I can alter more tonight.
+#endif
