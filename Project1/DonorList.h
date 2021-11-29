@@ -16,42 +16,41 @@
 #define DONORTYPE.H
 
 
-#include "Database.h"
+
 #include <iostream>
 #include <string>
 #include "DonorType.h"
 
-class DonorList
+class Node : public DonorType
 {
 public:
-	DonorList();
-	DonorList(DonorType Donor);
-	Node* getPtrToNext(return ptrToNext);
-private:
-	Node* ptrToNext;
-	Node* ptrToFirst;
-	Node* ptrToLast;
-	int count;
-
-};
-
-class Node
-{
-public:
-	Node() : DonorType Donor , ptrToNext(nullptr) {}
-	Node(int theData, Node* newPtrToNext)
-		: data(theData), ptrToNext(newPtrToNext) {}
+	Node() : donation(getFirstName, getLastName, getMembershipNo, getAmountDonated), ptrToNext(nullptr) {}
+	Node(DonorType donorInfo, Node* newPtrToNext)
+		: donation(donorInfo), ptrToNext(newPtrToNext) {}
 	Node* getPtrToNext() const { return ptrToNext; }
-	int getDonorType() const { return DonorType; }
-	void setDonorType(DonorType) { DonorType = theDonorType; }
+	DonorType getDonation() { return &donation; }
+	void setDonation(DonorType donorInfo) { donation = donorInfo; }
 	void setPtrToNext(Node* newPtrToNext)
 	{
 		ptrToNext = newPtrToNext;
 	}
 	~Node() {}
 private:
-	int data;
-	Node* ptrToNext; 
+	DonorType donation;
+	Node* ptrToNext;
 };
+
+class DonorList : public DonorType
+{
+public:
+	DonorList() : ptrToFirst(nullptr), count(0) {}
+
+private:
+	Node* ptrToFirst;
+	Node* ptrToLast;
+	int count;
+
+};
+
 
 #endif
