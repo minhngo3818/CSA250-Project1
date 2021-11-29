@@ -21,7 +21,6 @@
 
 #include <string>
 
-
 class Node : public DonorType
 {
 	public:
