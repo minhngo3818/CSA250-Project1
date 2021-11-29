@@ -58,4 +58,17 @@ void DonorType::printDonation() const
 		"\n    Donation amount: $" << setprecision(2) << fixed << amountDonated << endl;
 }
 
+bool DonorType::operator<(const DonorType& otherDonor) const
+{
+	// Asssume compare DonorType base on firstname
+	/*
+	* firstName = getFirtName();
+	* otherFirstName = otherDonor.getFirstName();
+	* return (firstName.compare(otherFirstName) < 0);
+	*/
+
+	// Compare DonorType base on amountDonated
+	return amountDonated < otherDonor.amountDonated;
+}
+
 DonorType::~DonorType() {}

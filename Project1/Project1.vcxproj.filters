@@ -8,11 +8,13 @@
     <ClCompile Include="part A test.cpp" />
     <ClCompile Include="part B test.cpp" />
     <ClCompile Include="DonorList.cpp" />
+    <ClCompile Include="Interface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Database.h" />
     <ClInclude Include="DonorType.h" />
     <ClInclude Include="MemberType.h" />
     <ClInclude Include="DonorList.h" />
+    <ClInclude Include="Interface.h" />
   </ItemGroup>
 </Project>

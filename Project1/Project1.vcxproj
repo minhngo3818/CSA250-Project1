@@ -142,6 +142,7 @@
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="DonorList.cpp" />
     <ClCompile Include="DonorType.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemberType.cpp" />
     <ClCompile Include="part A test.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Database.h" />
     <ClInclude Include="DonorList.h" />
     <ClInclude Include="DonorType.h" />
+    <ClInclude Include="Interface.h" />
     <ClInclude Include="MemberType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
