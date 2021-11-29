@@ -13,33 +13,34 @@
 	Project 1
 */
 
-#ifndef DONORTYPE_H
-#define DONORTYPE_H
+#ifndef DONORLIST_H
+#define DONORLIST_H
 
-#include "DonorType.h"
+#include "donorType.h"
 
 #include <string>
 
 
 class Node : public DonorType
 {
-	public:
-		Node() : donation(getFirstName, getLastName, getMembershipNo, getAmountDonated), ptrToNext(nullptr) {}
-		Node(DonorType donorInfo, Node* newPtrToNext)
-			: donation(donorInfo), ptrToNext(newPtrToNext) {}
-		Node* getPtrToNext() const { return ptrToNext; }
-		DonorType getDonation() { return &donation; }
-		void setDonation(DonorType donorInfo) { donation = donorInfo; }
-		void setPtrToNext(Node* newPtrToNext)
-		{
-			ptrToNext = newPtrToNext;
-		}
-		
-		~Node() {}
-		
-	private:
-		DonorType donation;
-		Node* ptrToNext;
+public:
+	Node() : data(0), ptrToNext(nullptr) {}
+	Node(DonorType donorInfo, Node* newPtrToNext)
+		: donation(donorInfo), ptrToNext(newPtrToNext) {}
+	Node* getPtrToNext() const { return ptrToNext; }
+	DonorType getDonation() { return &donation; }
+	void setDonation(DonorType donorInfo) { donation = donorInfo; }
+	void setPtrToNext(Node* newPtrToNext)
+	{
+		ptrToNext = newPtrToNext;
+	}
+
+	~Node() {}
+
+private:
+	int data;
+	DonorType donation;
+	Node* ptrToNext;
 };
 
 class DonorList : public DonorType
