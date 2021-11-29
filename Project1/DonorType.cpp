@@ -60,15 +60,7 @@ void DonorType::printDonation() const
 
 bool DonorType::operator<(const DonorType& otherDonor) const
 {
-	int membershipNo = getMembershipNo();
-	int otherMembershipNo = otherDonor.getMembershipNo();
-	
-	if (membershipNo == otherMembershipNo)
-	{
-		cerr << "Member ID must be unique\n";
-	}
-
-	return membershipNo < otherMembershipNo;
+	return getMembershipNo() < otherDonor.getMembershipNo();
 }
 
 DonorType::~DonorType() {}
