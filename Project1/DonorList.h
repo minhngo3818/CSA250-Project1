@@ -16,43 +16,57 @@
 #ifndef DONORLIST_H
 #define DONORLIST_H
 
-#include "donorType.h"
+#include "DonorType.h"
+#include "Database.h"
 
 #include <string>
 
 
 class Node : public DonorType
 {
-public:
-	Node() : data(0), ptrToNext(nullptr) {}
-	Node(DonorType donorInfo, Node* newPtrToNext)
-		: donation(donorInfo), ptrToNext(newPtrToNext) {}
-	Node* getPtrToNext() const { return ptrToNext; }
-	DonorType getDonation() { return &donation; }
-	void setDonation(DonorType donorInfo) { donation = donorInfo; }
-	void setPtrToNext(Node* newPtrToNext)
-	{
-		ptrToNext = newPtrToNext;
-	}
+	public:
+			Node() : data(0), ptrToNext(nullptr) {}
+			Node(DonorType donorInfo, Node* newPtrToNext)
+				: donation(donorInfo), ptrToNext(newPtrToNext) {}
+			Node* getPtrToNext() const { return ptrToNext; }
+			DonorType getDonation() { return &donation; }
+			void setDonation(DonorType donorInfo) { donation = donorInfo; }
+			void setPtrToNext(Node* newPtrToNext)
+			{
+				ptrToNext = newPtrToNext;
+			}
 
-	~Node() {}
+			~Node() {}
 
-private:
-	int data;
-	DonorType donation;
-	Node* ptrToNext;
+	private:
+			int data;
+			DonorType donation;
+			Node* ptrToNext;
 };
 
 class DonorList : public DonorType
 {
-public:
-	DonorList() : ptrToFirst(nullptr), count(0) {}
+	public:
+			DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {}
+			void addDonor(const std::string& newFirstName, const std::string& newLastName, int newMembershipNo, double newAmountDonated);
+			void creatList();
+			int getNoOfDonors() const { return count; }
+			double getTotalDonations() const { return donationTotal; }
+	
+			bool isEmpty() const { return (count == 0); }
 
-	~DonorList() {}
-private:
-	Node* ptrToFirst;
-	Node* ptrToLast;
-	int count;
+			void searchID(int membershipNo);
+			void deleteDonor();
+			void printAllDonors() const;
+			void printAllDonations() const;
+			void clearList();
+
+
+			~DonorList() {}
+	private:
+			Node* ptrToFirst;
+			Node* ptrToLast;
+			int count;
 
 };
 
