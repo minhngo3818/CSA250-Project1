@@ -60,15 +60,7 @@ void DonorType::printDonation() const
 
 bool DonorType::operator<(const DonorType& otherDonor) const
 {
-	// Asssume compare DonorType base on firstname
-	/*
-	* firstName = getFirtName();
-	* otherFirstName = otherDonor.getFirstName();
-	* return (firstName.compare(otherFirstName) < 0);
-	*/
-
-	// Compare DonorType base on amountDonated
-	return amountDonated < otherDonor.amountDonated;
+	return getMembershipNo() < otherDonor.getMembershipNo();
 }
 
 DonorType::~DonorType() {}
