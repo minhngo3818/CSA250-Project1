@@ -33,9 +33,9 @@ class DonorType : public MemberType
 		void printDonor() const;
 		void printDonation() const;
 
-		bool operator<(const DonorType& otherDonor) const;
-
 		~DonorType();
+		
+		bool operator<(const DonorType& otherDonor) const;
 
 	private:
 		double amountDonated;
