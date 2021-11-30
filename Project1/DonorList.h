@@ -47,7 +47,8 @@ class DonorList : public DonorType
 {
 	public:
 			DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {}
-			void addDonor(const std::string& newFirstName, const std::string& newLastName, int newMembershipNo, double newAmountDonated);
+			void addDonor(const std::string& newFirstName, const std::string& newLastName, 
+                             int newMembershipNo, double newAmountDonated);
 			void creatList();
 			int getNoOfDonors() const { return count; }
 			double getTotalDonations() const { return donationTotal; }
