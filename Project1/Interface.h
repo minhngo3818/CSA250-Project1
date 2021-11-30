@@ -26,6 +26,6 @@ void deleteDonor(DonorList&);
 
 void printAllDonors(const DonorList& aDonorList);
 
-void processSelection();
+void processSelection(DonorList& aDonorList);
 
 #endif
