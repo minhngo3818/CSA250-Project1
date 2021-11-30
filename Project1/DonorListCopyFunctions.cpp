@@ -86,11 +86,13 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& donorListToCopy)
 
 	//create additional nodes
 	//int nodesToDelete = count - donorListToCopy.count;
-	..Node *thisTemp2 = thisTemp;
+	Node *thisTemp2 = thisTemp;
 	
 	while (otherTemp != nullptr)
 	{
-		//this.addDonor() ?? how to call addDonor function? 
+		this->addDonor(first->getDonor().getFirstName(), first->getDonor().getLastName(),
+			first->getDonor().getMembershipNo(), first->getDonor().donationAmount);
+
 		otherTemp->getNext();
 		last = last->getNext();
 
