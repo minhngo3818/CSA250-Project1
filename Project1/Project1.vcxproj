@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="DonorList.cpp" />
+    <ClCompile Include="DonorListCopyFunctions.cpp" />
     <ClCompile Include="DonorType.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
