@@ -9,6 +9,7 @@
     <ClCompile Include="part B test.cpp" />
     <ClCompile Include="DonorList.cpp" />
     <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="DonorListCopyFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Database.h" />
