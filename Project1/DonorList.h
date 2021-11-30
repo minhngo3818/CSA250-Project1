@@ -47,6 +47,7 @@ class DonorList : public DonorType
 {
 	public:
 			DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {}
+			DonorList(const DonorList& donorListToCopy);	// add copy constructor
 			void addDonor(const std::string& newFirstName, const std::string& newLastName, int newMembershipNo, double newAmountDonated);
 			void creatList();
 			int getNoOfDonors() const { return count; }
@@ -60,12 +61,22 @@ class DonorList : public DonorType
 			void printAllDonations() const;
 			void clearList();
 
+			DonorList& operator=(const DonorList& donorListToCopy); // assignment operator
 
 			~DonorList() {}
 	private:
 			Node* ptrToFirst;
 			Node* ptrToLast;
 			int count;
+
+			// Helper functions
+			// Conditions to call each function below may be added in assignment operator fucntion 
+			// Those functions below must be private
+			DonorList& copyCallingObjEmpty(const DonorList& donorListToCopy);
+			DonorList& opyObjectsSameLength(const DonorList& donorListToCopy);
+			DonorList& copyCallingObjLonger(const DonorList& donorListToCopy);
+			DonorList& copyCallingObjShorter(const DonorList& donorListToCopy);
+
 
 };
 
