@@ -45,6 +45,27 @@ DonorList& DonorList::opyObjectsSameLength(const DonorList& donorListToCopy)
 DonorList& DonorList::copyCallingObjLonger(const DonorList& donorListToCopy)
 {
 	// Funtion body
+	Node *thisTemp = first;
+	Node *otherTemp = donorListToCopy.first;
+	for(int copyNode = 0; copyNode < count; copyNode++)
+	{
+		thisTemp->setDonor(otherTemp->getDonor());
+		thisTemp = thisTemp->getNext();
+		otherTemp = otherTemp->getNext();
+	}
+	last = otherTemp; //this is the last node after copying
+
+	//delete the rest
+	int nodesToDelete = count - donorListToCopy.count;
+	Node *thisTemp2 = thisTemp;
+	
+	while (thisTemp != nullptr)
+	{
+		thisTemp->getNext();
+		delete thisTempt2;
+		thisTemp2->getNext();
+
+	}
 	return *this;
 }
 
@@ -52,6 +73,28 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& donorListToCopy)
 DonorList& DonorList::copyCallingObjShorter(const DonorList& donorListToCopy)
 {
 	// Funtion body
+	Node *thisTemp = first;
+	Node *otherTemp = donorListToCopy.first;
+
+	//the loop needs to stop before the lasy node of the calling obj
+	for(int copyNode = 0; copyNode < count; copyNode++)
+	{
+		thisTemp->setDonor(otherTemp->getDonor());
+		thisTemp = thisTemp->getNext();
+		otherTemp = otherTemp->getNext();
+	}
+
+	//create additional nodes
+	//int nodesToDelete = count - donorListToCopy.count;
+	..Node *thisTemp2 = thisTemp;
+	
+	while (otherTemp != nullptr)
+	{
+		//this.addDonor() ?? how to call addDonor function? 
+		otherTemp->getNext();
+		last = last->getNext();
+
+	}
 	return *this;
 }
 
