@@ -90,7 +90,7 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& donorListToCopy)
 	
 	while (otherTemp != nullptr)
 	{
-		this->addDonor(first->getDonor().getFirstName(), first->getDonor().getLastName(),
+		addDonor(first->getDonor().getFirstName(), first->getDonor().getLastName(),
 			first->getDonor().getMembershipNo(), first->getDonor().donationAmount);
 
 		otherTemp->getNext();
