@@ -1,11 +1,14 @@
 /*
 	Night Owls
+
 	Breton, Liam (leader)
 	Ta, Hoa
 	Ngo, Minh
 	Richardson, Nick
 	Riana, Ali
-	November 22, 2021
+
+	November 29, 2021
+
 	CSA 250
 	Project 1
 */
@@ -15,29 +18,121 @@
 using namespace std;
 
 //Copy constructor
-DonorList::DonorList(const DonorList& donorListToCopy)
+DonorList::DonorList(const DonorList& listToCopy)
 {
-	// Funtion body
+	count = 0;
+	first = nullptr;
+	last = nullptr;
+	// count, first, last can be removed if default constructor has initialized
+
+	Node* currentNodeToCopy = listToCopy.first;
+
+	for (int i = 0; i < listToCopy.count; ++i)
+	{
+		addDonor(currentNodeToCopy->getFirstName(),
+			currentNodeToCopy->getLastName(),
+			currentNodeToCopy->getMembershipNo(),
+			currentNodeToCopy->getAmountDonated());
+
+		currentNodeToCopy->getNext();
+	}
+
 }
 
 //Copy assignment operator
-DonorList& DonorList::operator=(const DonorList& donorListToCopy)
+DonorList& DonorList::operator=(const DonorList& listToCopy)
 {
-	// Funtion body
-	return *this;
+	if (&listToCopy == this)
+	{
+		cerr << "Attempt assignment to itself.";
+	}
+	else
+	{
+		int numOfDonorsToCopy = listToCopy.count;
+
+		if (count == 0)
+		{
+			return copyCallingObjEmpty(listToCopy);
+		}
+		else if (count == numOfDonorsToCopy)
+		{
+			return copyObjectsSameLength(listToCopy);
+		}
+		else if (count > numOfDonorsToCopy)
+		{
+			return copyCallingObjLonger(listToCopy);
+		}
+		else if (count < numOfDonorsToCopy)
+		{
+			return copyCallingObjShorter(listToCopy);
+		}
+	}
 }
 
 //Function copyCallingObjIsEmpty
-DonorList& DonorList::copyCallingObjEmpty(const DonorList& donorListToCopy)
+DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 {
-	// Funtion body
+	if (listToCopy.count == 1)
+	{
+		addDonor(listToCopy.first->getFirstName(),
+			listToCopy.first->getLastName(),
+			listToCopy.first->getMembershipNo(),
+			listToCopy.first->getAmountDonated());
+	}
+	else
+	{
+		Node* currentNode = first;
+		Node* currentNodeToCopy = listToCopy.first;
+
+		while (currentNodeToCopy != nullptr)
+		{
+
+			addDonor(currentNodeToCopy->getFirstName(),
+				currentNodeToCopy->getLastName(),
+				currentNodeToCopy->getMembershipNo(),
+				currentNodeToCopy->getAmountDonated());
+
+			currentNode = currentNode->getNext();
+			currentNodeToCopy = currentNodeToCopy->getNext();
+		}
+	}
+
 	return *this;
 }
 
 //Function copyObjectsSameLength
-DonorList& DonorList::opyObjectsSameLength(const DonorList& donorListToCopy)
+DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 {
-	// Funtion body
+	if (listToCopy.count == 1)
+	{
+		first->setDonorInfo(listToCopy.first->getFirstName(),
+			listToCopy.first->getLastName(),
+			listToCopy.first->getMembershipNo(),
+			listToCopy.first->getAmountDonated());
+	}
+	else
+	{
+		Node* currentNode = first;
+		Node* currentNodeToCopy = listToCopy.first;
+
+		while (currentNodeToCopy != nullptr)
+		{
+			// Method 1: Using setDonorInfo()
+			// currentNode->setDonorInfo(currentNode->getFirstName(),
+			//			currentNode->getLastName(),
+			//			currentNode->getMembershipNo(),
+			//			currentNode->getAmountDonated() );
+
+			// Method 2: Using setDonation() from Node
+			currentNode->setDonor(currentNodeToCopy->getDonor());
+			// End copy section
+
+			currentNode = currentNode->getNext();
+			currentNodeToCopy = currentNodeToCopy->getNext();
+
+		}
+	}
+
 	return *this;
 }
 
