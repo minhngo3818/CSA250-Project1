@@ -7,7 +7,7 @@
 	Richardson, Nick
 	Riana, Ali
 
-	November 22, 2021
+	November 27, 2021
 
 	CSA 250
 	Project 1
@@ -16,7 +16,6 @@
 #include "Interface.h"
 
 #include <iostream>
-
 using namespace std;
 
 void displayMenu()
