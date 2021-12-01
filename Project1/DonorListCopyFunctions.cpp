@@ -181,15 +181,14 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 	}
 
 	//create additional nodes
-	//int nodesToDelete = count - donorListToCopy.count;
 	Node *thisTemp2 = thisTemp;
 	
 	while (otherTemp != nullptr)
 	{
-		addDonor(first->getDonor().getFirstName(), 
-			first->getDonor().getLastName(),
-			first->getDonor().getMembershipNo(), 
-			first->getDonor().getAmountDonated() );
+		addDonor(otherTemp->getDonor().getFirstName(), 
+			otherTemp->getDonor().getLastName(),
+			otherTemp->getDonor().getMembershipNo(), 
+			otherTemp->getDonor().getAmountDonated() );
 
 		otherTemp = otherTemp->getNext();
 		last = last->getNext();
