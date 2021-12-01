@@ -24,8 +24,8 @@ DonorList::DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {};
 void DonorList::addDonor(const string& newFirstName, const string& newLastName,
 			 	int newMembershipNo, double newAmountDonated)
 {
-	ptrToLast->setPtrToNext(new Node({ "", "", 0, 0.0 }, nullptr));
-	ptrToLast = ptrToLast->getPtrToNext;
+	ptrToLast->setPtrToNext(new Node({ newFirstName, newLastName, newMembershipNo, newAmountDonated}, nullptr));
+	ptrToLast = ptrToLast->getPtrToNext();
 }
 
 bool DonorList::isEmpty() const
@@ -85,6 +85,15 @@ void DonorList::deleteDonor(int membershipNo)
 		{
 			cout << "Donor is not in the list";
 		}
+	}
+}
+
+void DonorList::createList()
+{
+	set<DonorType> copyDonors = getData();
+	for (auto elem : copyDonors)
+	{
+		addDonor(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
 	}
 }
 
