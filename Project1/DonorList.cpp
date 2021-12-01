@@ -87,3 +87,8 @@ void DonorList::deleteDonor(int membershipNo)
 		}
 	}
 }
+
+DonorList::~DonorList()
+{
+	clearList();
+}
