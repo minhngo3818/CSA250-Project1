@@ -59,11 +59,19 @@ class DonorList : public DonorType
 			void deleteDonor(int membershipNo);
 			void printAllDonors() const;
 			void printAllDonations() const;
+
 			void clearList();
-
-
 			~DonorList() {}
+
+			DonorList(const DonorList& listToCopy);					// Part E, copy constructor
+			DonorList& operator=(const DonorList& listToCopy);		// Part E, assignment operator
+
 	private:
+			DonorList& copyCallingObjEmpty(const DonorList& listToCopy);	// Part E
+			DonorList& copyObjectsSameLength(const DonorList& listToCopy);	// Part E
+			DonorList& copyCallingObjLonger(const DonorList& listToCopy);	// Part E
+			DonorList& copyCallingObjShorter(const DonorList& listToCopy);	// Part E
+
 			Node* ptrToFirst;
 			Node* ptrToLast;
 			int count;

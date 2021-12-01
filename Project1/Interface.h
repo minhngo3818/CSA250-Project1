@@ -7,7 +7,7 @@
 	Richardson, Nick
 	Riana, Ali
 
-	November 22, 2021
+	November 27, 2021
 
 	CSA 250
 	Project 1
@@ -20,9 +20,9 @@
 
 void displayMenu();
 
-void addDonor(DonorList&);
+void addDonor(DonorList& aDonorList);
 
-void deleteDonor(DonorList&);
+void deleteDonor(DonorList& aDonorList);
 
 void printAllDonors(const DonorList& aDonorList);
 
