@@ -66,6 +66,7 @@ DonorList& DonorList::operator=(const DonorList& listToCopy)
 		{
 			return copyCallingObjShorter(listToCopy);
 		}
+		
 	}
 }
 
@@ -86,7 +87,6 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 
 		while (currentNodeToCopy != nullptr)
 		{
-
 			addDonor(currentNodeToCopy->getFirstName(),
 				currentNodeToCopy->getLastName(),
 				currentNodeToCopy->getMembershipNo(),
@@ -95,6 +95,7 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 			currentNode = currentNode->getNext();
 			currentNodeToCopy = currentNodeToCopy->getNext();
 		}
+		
 	}
 
 	return *this;
@@ -129,29 +130,30 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 
 			currentNode = currentNode->getNext();
 			currentNodeToCopy = currentNodeToCopy->getNext();
-
 		}
+		
 	}
 
 	return *this;
 }
 
 //Function copyCallingObjLonger
-DonorList& DonorList::copyCallingObjLonger(const DonorList& donorListToCopy)
+DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 {
-	// Funtion body
 	Node *thisTemp = first;
-	Node *otherTemp = donorListToCopy.first;
-	for(int copyNode = 0; copyNode < count; copyNode++)
+	Node *otherTemp = listToCopy.first;
+	
+	for (int copyNode = 0; copyNode < count; copyNode++)
 	{
 		thisTemp->setDonor(otherTemp->getDonor());
 		thisTemp = thisTemp->getNext();
 		otherTemp = otherTemp->getNext();
 	}
+	
 	last = otherTemp; //this is the last node after copying
 
 	//delete the rest
-	int nodesToDelete = count - donorListToCopy.count;
+	int nodesToDelete = count - listToCopy.count;
 	Node *thisTemp2 = thisTemp;
 	
 	while (thisTemp != nullptr)
@@ -159,17 +161,16 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& donorListToCopy)
 		thisTemp->getNext();
 		delete thisTempt2;
 		thisTemp2->getNext();
-
 	}
+	
 	return *this;
 }
 
 //Function copyCallingObjShorter
-DonorList& DonorList::copyCallingObjShorter(const DonorList& donorListToCopy)
+DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 {
-	// Funtion body
 	Node *thisTemp = first;
-	Node *otherTemp = donorListToCopy.first;
+	Node *otherTemp = listToCopy.first;
 
 	//the loop needs to stop before the lasy node of the calling obj
 	for(int copyNode = 0; copyNode < count; copyNode++)
@@ -185,13 +186,15 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& donorListToCopy)
 	
 	while (otherTemp != nullptr)
 	{
-		addDonor(first->getDonor().getFirstName(), first->getDonor().getLastName(),
-			first->getDonor().getMembershipNo(), first->getDonor().donationAmount);
+		addDonor(first->getDonor().getFirstName(), 
+			first->getDonor().getLastName(),
+			first->getDonor().getMembershipNo(), 
+			first->getDonor().getAmountDonated() );
 
-		otherTemp->getNext();
+		otherTemp = otherTemp->getNext();
 		last = last->getNext();
-
 	}
+	
 	return *this;
 }
 
