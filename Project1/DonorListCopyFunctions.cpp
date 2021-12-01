@@ -181,7 +181,7 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 	}
 
 	//create additional nodes
-	Node *thisTemp2 = thisTemp;
+	//Node *thisTemp2 = thisTemp;
 	
 	while (otherTemp != nullptr)
 	{
