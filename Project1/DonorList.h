@@ -12,7 +12,6 @@
 	CSA 250
 	Project 1
 */
-
 #ifndef DONORLIST_H
 #define DONORLIST_H
 
@@ -21,10 +20,11 @@
 
 #include <string>
 
+
 class Node : public DonorType
 {
 	public:
-			Node() : data(0), ptrToNext(nullptr) {}
+			Node() : donation("", "", 0, 0.0), ptrToNext(nullptr) {}
 			Node(DonorType donorInfo, Node* newPtrToNext)
 				: donation(donorInfo), ptrToNext(newPtrToNext) {}
 			Node* getPtrToNext() const { return ptrToNext; }
@@ -38,7 +38,6 @@ class Node : public DonorType
 			~Node() {}
 
 	private:
-			int data;
 			DonorType donation;
 			Node* ptrToNext;
 };
@@ -46,17 +45,18 @@ class Node : public DonorType
 class DonorList : public DonorType
 {
 	public:
+			DonorList();
 			DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {}
-			void addDonor(const std::string& newFirstName, const std::string& newLastName, 
-                             int newMembershipNo, double newAmountDonated);
+			void addDonor(const std::string& newFirstName, const std::string& newLastName,
+						int newMembershipNo, double newAmountDonated);
 			void creatList();
-			int getNoOfDonors() const { return count; }
-			double getTotalDonations() const { return donationTotal; }
+			int getNoOfDonors() const {}
+			double getTotalDonations() const {}
 	
-			bool isEmpty() const { return (count == 0); }
+			bool isEmpty() const {}
 
 			void searchID(int membershipNo);
-			void deleteDonor();
+			void deleteDonor(int membershipNo);
 			void printAllDonors() const;
 			void printAllDonations() const;
 			void clearList();
