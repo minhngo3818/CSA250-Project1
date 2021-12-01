@@ -24,12 +24,19 @@ class DonorType : public MemberType
 {
 	public:
 		DonorType();
-		DonorType(const std::string& newFirstName, const std::string& newLastName,
-			int newMembershipNo, double newAmountDonated);
-		void setDonorInfo(const std::string& newFirstName, const std::string& newLastName,
-			int newMembershipNo, double newAmountDonated);
+		DonorType(const std::string& newFirstName, 
+				const std::string& newLastName,
+				int newMembershipNo, 
+				double newAmountDonated);
+
+		void setDonorInfo(const std::string& newFirstName, 
+				const std::string& newLastName,
+				int newMembershipNo, 
+				double newAmountDonated);
 		void setAmountDonated(double newAmountDonated);
+
 		double getAmountDonated() const;
+
 		void printDonor() const;
 		void printDonation() const;
 
@@ -39,7 +46,6 @@ class DonorType : public MemberType
 
 	private:
 		double amountDonated;
-
 };
 
 #endif

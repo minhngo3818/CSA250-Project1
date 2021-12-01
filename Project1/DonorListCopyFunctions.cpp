@@ -14,10 +14,8 @@
 */
 
 #include "DonorList.h"
-
 using namespace std;
 
-//Copy constructor
 DonorList::DonorList(const DonorList& listToCopy)
 {
 	count = 0;
@@ -39,7 +37,6 @@ DonorList::DonorList(const DonorList& listToCopy)
 
 }
 
-//Copy assignment operator
 DonorList& DonorList::operator=(const DonorList& listToCopy)
 {
 	if (&listToCopy == this)
@@ -70,7 +67,6 @@ DonorList& DonorList::operator=(const DonorList& listToCopy)
 	}
 }
 
-//Function copyCallingObjIsEmpty
 DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
@@ -82,7 +78,6 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 	}
 	else
 	{
-		Node* currentNode = first;
 		Node* currentNodeToCopy = listToCopy.first;
 
 		while (currentNodeToCopy != nullptr)
@@ -92,7 +87,6 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 				currentNodeToCopy->getMembershipNo(),
 				currentNodeToCopy->getAmountDonated());
 
-			currentNode = currentNode->getNext();
 			currentNodeToCopy = currentNodeToCopy->getNext();
 		}
 		
@@ -101,7 +95,6 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 	return *this;
 }
 
-//Function copyObjectsSameLength
 DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
@@ -131,13 +124,11 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 			currentNode = currentNode->getNext();
 			currentNodeToCopy = currentNodeToCopy->getNext();
 		}
-		
 	}
 
 	return *this;
 }
 
-//Function copyCallingObjLonger
 DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 {
 	Node *thisTemp = first;
@@ -166,7 +157,6 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 	return *this;
 }
 
-//Function copyCallingObjShorter
 DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 {
 	Node *thisTemp = first;
