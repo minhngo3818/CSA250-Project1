@@ -54,8 +54,7 @@ class DonorList : public DonorType
 			double getTotalDonations() const {}
 	
 			bool isEmpty() const {}
-
-			void searchID(int membershipNo);
+			bool searchID(int membershipNo) const;
 			void deleteDonor(int membershipNo);
 			void printAllDonors() const;
 			void printAllDonations() const;

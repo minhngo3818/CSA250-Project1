@@ -97,6 +97,54 @@ void DonorList::createList()
 	}
 }
 
+bool DonorList::searchID(int membershipNo) const {
+	
+	
+		Node* current = ptrToFirst;
+
+		while (current != nullptr)
+		{
+			if (current->getMembershipNo() == membershipNo)
+				return true;
+			else
+				current = current->getPtrToNext();
+		}
+
+		return false;
+}
+void DonorList::printAllDonors() const
+{
+	Node* current = ptrToFirst;
+
+	while (current != nullptr)
+	{
+		    current->printMemberInfo();
+			current = current->getPtrToNext();
+	}
+}
+void DonorList::printAllDonations() const
+{
+	Node* current = ptrToFirst;
+
+	while (current != nullptr)
+	{
+		current->printDonation();
+		current = current->getPtrToNext();
+	}
+}
+void DonorList::clearList()
+{
+	Node* current = ptrToFirst;
+	Node* temp = nullptr;
+	while (current != nullptr)
+	{
+		temp = current->getPtrToNext();
+		delete current;
+		current = nullptr;
+		current = temp;
+	}
+}
+
 DonorList::~DonorList()
 {
 	clearList();
