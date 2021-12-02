@@ -146,8 +146,6 @@
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemberType.cpp" />
-    <ClCompile Include="part A test.cpp" />
-    <ClCompile Include="part B test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Database.h" />

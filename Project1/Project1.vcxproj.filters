@@ -1,21 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Database.cpp" />
-    <ClCompile Include="DonorType.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MemberType.cpp" />
-    <ClCompile Include="part A test.cpp" />
-    <ClCompile Include="part B test.cpp" />
-    <ClCompile Include="DonorList.cpp" />
-    <ClCompile Include="Interface.cpp" />
-    <ClCompile Include="DonorListCopyFunctions.cpp" />
+    <ClCompile Include="Database.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DonorList.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DonorListCopyFunctions.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DonorType.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MemberType.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Database.h" />
-    <ClInclude Include="DonorType.h" />
-    <ClInclude Include="MemberType.h" />
-    <ClInclude Include="DonorList.h" />
-    <ClInclude Include="Interface.h" />
+    <ClInclude Include="Database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DonorList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DonorType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemberType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{8d2f839f-f17d-4ccc-98ec-c914363a1396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4799181b-9267-4b80-90a4-856502de0ee4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

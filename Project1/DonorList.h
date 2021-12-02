@@ -24,21 +24,26 @@
 class Node : public DonorType
 {
 	public:
-			Node() : donation("", "", 0, 0.0), ptrToNext(nullptr) {}
-			Node(DonorType donorInfo, Node* newPtrToNext)
-				: donation(donorInfo), ptrToNext(newPtrToNext) {}
-			Node* getPtrToNext() const { return ptrToNext; }
-			DonorType getDonation() { return donation; }
-			void setDonation(DonorType donorInfo) { donation = donorInfo; }
-			void setPtrToNext(Node* newPtrToNext)
-			{
-				ptrToNext = newPtrToNext;
-			}
+		Node() : donor(DonorType()), ptrToNext(nullptr) {}
+		Node(const DonorType& newDonor, Node* newPtrToNext)
+			: donor(newDonor), ptrToNext(newPtrToNext) {}
 
-			~Node() {}
+		Node* getPtrToNext() const { return ptrToNext; }
+		DonorType& getDonor() { return donor; }
+
+		void setDonor(const DonorType& newDonor)
+		{
+			donor = newDonor;
+		}
+		void setPtrToNext(Node* newPtrToNext)
+		{
+			ptrToNext = newPtrToNext;
+		}
+
+		~Node() {}
 
 	private:
-			DonorType donation;
+			DonorType donor;
 			Node* ptrToNext;
 };
 
@@ -46,35 +51,42 @@ class DonorList : public DonorType
 {
 	public:
 			DonorList();
-			DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {}
-			void addDonor(const std::string& newFirstName, const std::string& newLastName,
-						int newMembershipNo, double newAmountDonated);
+
+			void addDonor(const std::string& newFirstName, 
+				const std::string& newLastName,
+				int newMembershipNo, 
+				double newAmountDonated);
+
 			void createList();
-			int getNoOfDonors() const {}
-			double getTotalDonations() const {}
+
+			int getNoOfDonors() const;
+
+			double getTotalDonations() const;
 	
-			bool isEmpty() const {}
+			bool isEmpty() const;
+
 			bool searchID(int membershipNo) const;
+
 			void deleteDonor(int membershipNo);
+
 			void printAllDonors() const;
 			void printAllDonations() const;
 
 			void clearList();
-			~DonorList() {}
+			~DonorList();
 
-			DonorList(const DonorList& listToCopy);					// Part E, copy constructor
-			DonorList& operator=(const DonorList& listToCopy);		// Part E, assignment operator
+			DonorList(const DonorList& listToCopy);					
+			DonorList& operator=(const DonorList& listToCopy);		
 
 	private:
-			DonorList& copyCallingObjEmpty(const DonorList& listToCopy);	// Part E
-			DonorList& copyObjectsSameLength(const DonorList& listToCopy);	// Part E
-			DonorList& copyCallingObjLonger(const DonorList& listToCopy);	// Part E
-			DonorList& copyCallingObjShorter(const DonorList& listToCopy);	// Part E
+			DonorList& copyCallingObjEmpty(const DonorList& listToCopy);	
+			DonorList& copyObjectsSameLength(const DonorList& listToCopy);	
+			DonorList& copyCallingObjLonger(const DonorList& listToCopy);	
+			DonorList& copyCallingObjShorter(const DonorList& listToCopy);	
 
 			Node* ptrToFirst;
 			Node* ptrToLast;
 			int count;
-
 };
 
 #endif
