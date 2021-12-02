@@ -43,7 +43,7 @@ double DonorList::getTotalDonations() const
 	double donationTotal = 0.0;
 	for (int i = 0; i < getData().size(); ++i)
 	{
-		i += getAmountDonated();
+		i += static_cast<int>(getAmountDonated());
 		donationTotal = i;
 	}
 	return donationTotal;
@@ -72,7 +72,7 @@ void DonorList::deleteDonor(int membershipNo)
 				delete current;
 				current = nullptr;
 				--count;
-				found == true;
+				found = true;
 
 			}
 			else
