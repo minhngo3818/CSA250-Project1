@@ -12,10 +12,10 @@
 	CSA 250
 	Project 1
 */
-#include "DonorList.h";
-#include "DonorType.h";
-#include <iostream>;
-#include <string>;
+#include "DonorList.h"
+#include "DonorType.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 
