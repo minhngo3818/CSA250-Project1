@@ -41,7 +41,7 @@ int DonorList::getNoOfDonors() const
 double DonorList::getTotalDonations() const
 {
 	double donationTotal = 0.0;
-	for (int i = 0; i < getData().size(); ++i)
+	for (unsigned int i = 0; i < getData().size(); ++i)
 	{
 		i += static_cast<int>(getAmountDonated());
 		donationTotal = i;
