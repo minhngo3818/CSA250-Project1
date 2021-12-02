@@ -26,7 +26,7 @@ using namespace std;
 int main()
 {
 	DonorList list1;
-	list1.addDonor(Patrick, Hewes, 24, 67.0);
+	list1.addDonor("Patrick", "Hewes", 24, 67.0);
 	list1.createList();
 	list1.getNoOfDonors();
 	list1.isEmpty();
