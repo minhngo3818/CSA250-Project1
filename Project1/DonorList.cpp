@@ -30,7 +30,7 @@ void DonorList::addDonor(const string& newFirstName, const string& newLastName,
 
 bool DonorList::isEmpty() const
 {
-	return (count == 0); 
+	return count == 0; 
 }
 
 int DonorList::getNoOfDonors() const
