@@ -143,18 +143,26 @@ int main()
 	cout << "print list2 \n";
 	list2.printAllDonors();
 	list2.printAllDonations();
+	*/
 
-/*
+	/*
 	//copyCallingObjLonger()
+	cout << "\n--------Test copy longer calling oibj---------\n";
+
+	//----------------------------------------------------------------
+	// => Test list 2 has 2 element: passed with new update
+	// => Test list 2 has more than 2 element: passed with new update
+	//----------------------------------------------------------------
+
 	DonorList list1;
 	list1.addDonor("Hoa1", "Ta", 1234, 1000.01);
-	list1.addDonor("Minh1", "Ngo", 12345, 1500.01);
-	list1.addDonor("Nick1", "Richardson", 123456, 2000.01);
-	list1.addDonor("Riana1", "Ali", 1234567, 2500.01);
+	//list1.addDonor("Minh1", "Ngo", 12345, 1500.01);
+	//list1.addDonor("Nick1", "Richardson", 123456, 2000.01);
+	//list1.addDonor("Riana1", "Ali", 1234567, 2500.01);
 
 	DonorList list2;
-	list2.addDonor("Hoa", "Ta", 123, 1000.01);
-	list2.addDonor("Minh", "Ngo", 1234, 1500.01);
+	list2.addDonor("Huong", "Ta", 123, 1000.01);
+	//list2.addDonor("Minh", "Ngo", 1234, 1500.01);
 
 	cout << "print list1 \n";
 	list1.printAllDonors();
@@ -165,7 +173,7 @@ int main()
 	list2.printAllDonations();
 
 	list1 = list2;
-	cout << "after assign list1 = list2 \n";
+	cout << "\n--------After assign list1 = list2 ----------------\n";
 	cout << "print list1 \n";
 	list1.printAllDonors();
 	list1.printAllDonations();
@@ -174,13 +182,14 @@ int main()
 	list2.printAllDonors();
 	list2.printAllDonations();
 
-	cout << "Empty list1 \n";
-	list1.clearList();
+	cout << "Empty list2 \n";
+	
 	cout << "print list1 \n";
 	list1.printAllDonors();
 	list1.printAllDonations();
 
 	cout << "print list2 \n";
+	list2.clearList();
 	list2.printAllDonors();
 	list2.printAllDonations();
 	*/
