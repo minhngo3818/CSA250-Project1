@@ -33,6 +33,8 @@ int main()
 		displayMenu();
 		processSelection(DList);
 	}
+	
+	sytem("Pause");
 	/*
 	DonorList listA;
 	listA.createList();
