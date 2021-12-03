@@ -15,6 +15,9 @@
 
 #include "DonorType.h"
 #include "MemberType.h"
+#include "DonorList.h"
+#include "Interface.h"
+#include "Database.h"
 
 #include <iostream>
 #include <iomanip>
@@ -24,9 +27,12 @@ using namespace std;
 
 int main()
 {
-	string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+	DonorList DList;
+	DList.createList();
+	displayMenu();
+	processSelection(DList);
 
-	cout << "--------------First Project-----------------\n";
+
 
 
 	/*system("Pause");*/

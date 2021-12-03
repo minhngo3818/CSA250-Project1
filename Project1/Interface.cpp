@@ -25,7 +25,7 @@ void displayMenu()
 		<< "*************************************************\n\n"
 		<< "Select one of the following:\n\n"
 		<< "    1. Add a donor\n"
-		<< "    2. Delete a donor"
+		<< "    2. Delete a donor\n"
 		<< "    3. Print all donors\n"
 		<< "    4. To exit\n";
 }
@@ -42,7 +42,7 @@ void addDonor(DonorList& aDonorList)
 	cin >> inputLastName;
 	cout << "\n  => Enter donor's membership number: ";
 	cin >> inputMembershipNo;
-	cout << "\n  => Enter amount donated: &";
+	cout << "\n  => Enter amount donated: $";
 	cin >> inputAmountDonated;
 	cout << "\n\n  => Donor has been added.\n";
 
@@ -74,12 +74,15 @@ void processSelection(DonorList& aDonorList)
 
 	char userInput;
 	bool done = false;
+	bool firstTime = true;
 
 	while (!done)
 	{
 		// Notes: Assume user always types correct input
 
-		displayMenu();
+		if (!firstTime) 
+			displayMenu();
+		firstTime = false;
 		cout << selectionPrompt;
 		cin >> userInput;
 		cout << endl;

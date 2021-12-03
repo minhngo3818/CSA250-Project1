@@ -22,14 +22,15 @@
 
 using namespace std;
 
-DonorList::DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr), count(0) {};
+DonorList::DonorList() : ptrToFirst(nullptr), ptrToLast(nullptr),
+count(0) {};
 
-void DonorList::addDonor(const string& newFirstName, const string& newLastName,
-	int newMembershipNo, double newAmountDonated)
+void DonorList::addDonor(const string& newFirstName,
+	const string& newLastName, int newMembershipNo, 
+	double newAmountDonated)
 {
 	DonorType newDonor = DonorType(newFirstName, newLastName,
 		newMembershipNo, newAmountDonated);
-
 	if (count == 0)
 	{
 		ptrToFirst = new Node(newDonor, nullptr);
@@ -37,10 +38,35 @@ void DonorList::addDonor(const string& newFirstName, const string& newLastName,
 	}
 	else
 	{
-		ptrToLast->setPtrToNext(new Node(newDonor, nullptr));
-		ptrToLast = ptrToLast->getPtrToNext();
+		if (ptrToFirst->getDonor().getMembershipNo() > newMembershipNo)
+		{
+			ptrToFirst = new Node(newDonor, ptrToFirst);
+		}
+		else if (ptrToLast->getDonor().getMembershipNo() < newMembershipNo)
+		{
+			ptrToLast->setPtrToNext(new Node(newDonor, nullptr));
+			ptrToLast = ptrToLast->getPtrToNext();
+		}
+		else
+		{
+			bool done = false;
+			Node* sortPtr = ptrToFirst->getPtrToNext();
+			Node* sortPtrTrail = ptrToFirst;
+			while (!done)
+			{
+				if (sortPtr == nullptr)
+					done = true;
+				else if (sortPtr->getDonor().getMembershipNo() > newMembershipNo)
+					done = true;
+				else
+				{
+				sortPtr = sortPtr->getPtrToNext();
+				sortPtrTrail = sortPtrTrail->getPtrToNext();
+				}
+			}
+			sortPtrTrail->setPtrToNext(new Node(newDonor, sortPtr));
+		}
 	}
-
 	++count;
 }
 
@@ -86,9 +112,11 @@ void DonorList::deleteDonor(int membershipNo)
 
 		while (!found && currentNode != nullptr)
 		{
-			if (currentNode->getDonor().getMembershipNo() == membershipNo)
+			if (currentNode->getDonor().getMembershipNo()
+				== membershipNo)
 			{
-				trailCurrent->setPtrToNext(currentNode->getPtrToNext());
+				trailCurrent->setPtrToNext(currentNode->
+					getPtrToNext());
 				delete currentNode;
 				currentNode = nullptr;
 				--count;
@@ -140,7 +168,8 @@ bool DonorList::searchID(int membershipNo) const
 
 		while (currentNode != nullptr)
 		{
-			if (currentNode->getDonor().getMembershipNo() == membershipNo)
+			if (currentNode->getDonor().getMembershipNo() 
+				== membershipNo)
 				return true;
 			else
 				currentNode = currentNode->getPtrToNext();

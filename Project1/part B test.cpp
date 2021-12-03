@@ -23,7 +23,7 @@
 
 using namespace std;
 
-int main()
+int bTest()
 {
 	DonorList list1;
 	list1.addDonor("Patrick", "Hewes", 24, 67.0);
@@ -37,5 +37,6 @@ int main()
 	list1.printAllDonations();
 	list1.clearList();
 	list1.~DonorList();
+	return 0;
 	
 }

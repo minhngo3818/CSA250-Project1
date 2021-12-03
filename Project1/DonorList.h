@@ -24,7 +24,8 @@
 class Node : public DonorType
 {
 	public:
-		Node() : donor(DonorType("", "", 0, 0.0)), ptrToNext(nullptr) {}
+		Node() : donor(DonorType("", "", 0, 0.0)),
+			ptrToNext(nullptr) {}
 		Node(DonorType newDonor, Node* newPtrToNext)
 			: donor(newDonor), ptrToNext(newPtrToNext) {}
 
@@ -52,8 +53,9 @@ class DonorList : public DonorType
 	public:
 		DonorList();
 
-		void addDonor(const std::string& newFirstName, const std::string& newLastName,
-			int newMembershipNo, double newAmountDonated);
+		void addDonor(const std::string& newFirstName,
+			const std::string& newLastName, int newMembershipNo, 
+			double newAmountDonated);
 
 		void createList();
 

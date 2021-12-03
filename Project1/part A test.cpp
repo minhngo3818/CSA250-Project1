@@ -21,7 +21,7 @@
 
 using namespace std;
 
-int main()
+int aTest()
 {
 	string line = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
 

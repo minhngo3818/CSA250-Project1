@@ -30,7 +30,7 @@ DonorList::DonorList(const DonorList& listToCopy)
 			currentNodeToCopy->getDonor().getLastName(),
 			currentNodeToCopy->getDonor().getMembershipNo(),
 			currentNodeToCopy->getDonor().getAmountDonated());
-
+		count++;
 		currentNodeToCopy->getPtrToNext();
 	}
 
@@ -98,7 +98,8 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
-		ptrToFirst->setDonorInfo(listToCopy.ptrToFirst->getDonor().getFirstName(),
+		ptrToFirst->setDonorInfo(
+			listToCopy.ptrToFirst->getDonor().getFirstName(),
 			listToCopy.ptrToFirst->getDonor().getLastName(),
 			listToCopy.ptrToFirst->getDonor().getMembershipNo(),
 			listToCopy.ptrToFirst->getDonor().getAmountDonated());
