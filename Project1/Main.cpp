@@ -27,7 +27,7 @@ int main()
 	
 	DonorList DList;
 	DList.createList();
-	
+	/*
 	if (!DList.isEmpty())
 	{
 		displayMenu();
@@ -35,6 +35,8 @@ int main()
 	}
 	
 	system("Pause");
+	*/
+
 	/*
 	DonorList listA;
 	listA.createList();
@@ -58,7 +60,6 @@ int main()
 	// test the copy assignment operator
 
 	*/
-
 	/*
 	//copyCallingObjEmpty()
 	DonorList list1;
