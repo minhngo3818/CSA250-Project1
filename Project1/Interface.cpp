@@ -62,14 +62,13 @@ void deleteDonor(DonorList& aDonorList)
 {
 	if (aDonorList.isEmpty())
 	{
-		cout << "  => List is empty.\n";
+		cout << "The database has no donors.\n";
 	}
 	else
 	{
 		int inputMembershipNo;
 		cout << "  => Enter donor's membership number: ";
 		cin >> inputMembershipNo;
-
 		aDonorList.deleteDonor(inputMembershipNo);
 		cout << "\n  => Donor has been deleted.\n";
 	}
@@ -85,9 +84,12 @@ void processSelection(DonorList& aDonorList)
 {
 	// Prompts
 	string selectionPrompt = "\n  => Enter your selection: ";
-	string continuePrompt = "\n  => Would you like to continue? (y/n) ";
-	string goodbyeMessage = "  => Thank you for visiting our site!\n\n";
-	string wrongInputMessage = "  => Sorry. That is not a selection.\n";
+	string continuePrompt = 
+		"\n  => Would you like to continue? (y/n) ";
+	string goodbyeMessage = 
+		"  => Thank you for visiting our site!\n\n";
+	string wrongInputMessage = 
+		"  => Sorry. That is not a selection.\n";
 
 	char userInput;
 	bool done = false;
@@ -141,7 +143,5 @@ void processSelection(DonorList& aDonorList)
 				cout << goodbyeMessage;
 			}
 		}
-		
-
 	}
 }

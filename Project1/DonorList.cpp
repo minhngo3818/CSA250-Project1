@@ -38,11 +38,13 @@ void DonorList::addDonor(const string& newFirstName,
 	}
 	else
 	{
-		if (ptrToFirst->getDonor().getMembershipNo() > newMembershipNo)
+		if (ptrToFirst->getDonor().getMembershipNo()
+		 > newMembershipNo)
 		{
 			ptrToFirst = new Node(newDonor, ptrToFirst);
 		}
-		else if (ptrToLast->getDonor().getMembershipNo() < newMembershipNo)
+		else if (ptrToLast->getDonor().getMembershipNo()
+		 < newMembershipNo)
 		{
 			ptrToLast->setPtrToNext(new Node(newDonor, nullptr));
 			ptrToLast = ptrToLast->getPtrToNext();
@@ -57,7 +59,8 @@ void DonorList::addDonor(const string& newFirstName,
 			{
 				if (sortPtr == nullptr)
 					done = true;
-				else if (sortPtr->getDonor().getMembershipNo() > newMembershipNo)
+				else if (sortPtr->getDonor().getMembershipNo()
+				> newMembershipNo)
 					done = true;
 				else
 				{
@@ -132,7 +135,6 @@ void DonorList::deleteDonor(int membershipNo)
 				currentNode = currentNode->getPtrToNext();
 			}
 		}
-
 		if (!found)
 		{
 			cout << "\nDonor is not in the list.";

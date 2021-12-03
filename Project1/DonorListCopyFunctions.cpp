@@ -63,11 +63,10 @@ DonorList& DonorList::operator=(const DonorList& listToCopy)
 			return copyCallingObjShorter(listToCopy);
 		}
 	}
-
-	//return *this;
 }
 
-DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
+DonorList& DonorList::copyCallingObjEmpty
+(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
@@ -95,7 +94,8 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 	return *this;
 }
 
-DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
+DonorList& DonorList::copyObjectsSameLength
+(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
@@ -121,7 +121,8 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 	return *this;
 }
 
-DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
+DonorList& DonorList::copyCallingObjLonger
+(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
@@ -163,7 +164,8 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 	return *this;
 }
 
-DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
+DonorList& DonorList::copyCallingObjShorter
+(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 2)
 	{
@@ -179,7 +181,8 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 		Node* currentNode = ptrToFirst;
 		Node* currentNodeToCopy = listToCopy.ptrToFirst;
 
-		//the loop needs to stop before the lasy node of the calling obj
+		// the loop needs to stop before the last node of the
+		// calling obj
 		while (currentNode != nullptr)
 		{
 			currentNode->setDonor(currentNodeToCopy->getDonor());
