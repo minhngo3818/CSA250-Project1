@@ -64,7 +64,7 @@ DonorList& DonorList::operator=(const DonorList& listToCopy)
 		}
 	}
 
-	return *this;
+	//return *this;
 }
 
 DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
@@ -99,7 +99,7 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
-		ptrToFirst->setDonorInfo(
+		ptrToFirst->getDonor().setDonorInfo(
 			listToCopy.ptrToFirst->getDonor().getFirstName(),
 			listToCopy.ptrToFirst->getDonor().getLastName(),
 			listToCopy.ptrToFirst->getDonor().getMembershipNo(),
