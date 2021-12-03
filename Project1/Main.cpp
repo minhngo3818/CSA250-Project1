@@ -34,7 +34,7 @@ int main()
 		processSelection(DList);
 	}
 	
-	sytem("Pause");
+	system("Pause");
 	/*
 	DonorList listA;
 	listA.createList();
