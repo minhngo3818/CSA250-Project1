@@ -24,7 +24,7 @@
 class Node : public DonorType
 {
 	public:
-		Node() : donor(DonorType()), ptrToNext(nullptr) {}
+		Node() : donor(DonorType("", "", 0, 0.0)), ptrToNext(nullptr) {}
 		Node(const DonorType& newDonor, Node* newPtrToNext)
 			: donor(newDonor), ptrToNext(newPtrToNext) {}
 

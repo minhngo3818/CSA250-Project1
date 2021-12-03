@@ -26,10 +26,10 @@ DonorList::DonorList(const DonorList& listToCopy)
 
 	for (int i = 0; i < listToCopy.count; ++i)
 	{
-		addDonor(currentNodeToCopy->getFirstName(),
-			currentNodeToCopy->getLastName(),
-			currentNodeToCopy->getMembershipNo(),
-			currentNodeToCopy->getAmountDonated());
+		addDonor(currentNodeToCopy->getDonor().getFirstName(),
+			currentNodeToCopy->getDonor().getLastName(),
+			currentNodeToCopy->getDonor().getMembershipNo(),
+			currentNodeToCopy->getDonor().getAmountDonated());
 
 		currentNodeToCopy->getPtrToNext();
 	}
@@ -70,10 +70,10 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
-		addDonor(listToCopy.ptrToFirst->getFirstName(),
-			listToCopy.ptrToFirst->getLastName(),
-			listToCopy.ptrToFirst->getMembershipNo(),
-			listToCopy.ptrToFirst->getAmountDonated());
+		addDonor(listToCopy.ptrToFirst->getDonor().getFirstName(),
+			listToCopy.ptrToFirst->getDonor().getLastName(),
+			listToCopy.ptrToFirst->getDonor().getMembershipNo(),
+			listToCopy.ptrToFirst->getDonor().getAmountDonated());
 	}
 	else
 	{
@@ -81,10 +81,10 @@ DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)
 
 		while (currentNodeToCopy != nullptr)
 		{
-			addDonor(currentNodeToCopy->getFirstName(),
-				currentNodeToCopy->getLastName(),
-				currentNodeToCopy->getMembershipNo(),
-				currentNodeToCopy->getAmountDonated());
+			addDonor(currentNodeToCopy->getDonor().getFirstName(),
+				currentNodeToCopy->getDonor().getLastName(),
+				currentNodeToCopy->getDonor().getMembershipNo(),
+				currentNodeToCopy->getDonor().getAmountDonated());
 
 			currentNodeToCopy = currentNodeToCopy->getPtrToNext();
 		}
@@ -98,10 +98,10 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
 	{
-		ptrToFirst->setDonorInfo(listToCopy.ptrToFirst->getFirstName(),
-			listToCopy.ptrToFirst->getLastName(),
-			listToCopy.ptrToFirst->getMembershipNo(),
-			listToCopy.ptrToFirst->getAmountDonated());
+		ptrToFirst->setDonorInfo(listToCopy.ptrToFirst->getDonor().getFirstName(),
+			listToCopy.ptrToFirst->getDonor().getLastName(),
+			listToCopy.ptrToFirst->getDonor().getMembershipNo(),
+			listToCopy.ptrToFirst->getDonor().getAmountDonated());
 	}
 	else
 	{
@@ -174,10 +174,10 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 	
 	while (otherTemp != nullptr)
 	{
-		addDonor(otherTemp->getFirstName(), 
-			otherTemp->getLastName(),
-			otherTemp->getMembershipNo(), 
-			otherTemp->getAmountDonated() );
+		addDonor(otherTemp->getDonor().getFirstName(),
+			otherTemp->getDonor().getLastName(),
+			otherTemp->getDonor().getMembershipNo(),
+			otherTemp->getDonor().getAmountDonated() );
 
 		otherTemp = otherTemp->getPtrToNext();
 		ptrToLast = ptrToLast->getPtrToNext();

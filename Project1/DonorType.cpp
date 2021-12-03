@@ -19,7 +19,7 @@
 #include <iomanip>
 using namespace std;
 
-DonorType::DonorType() : amountDonated(0.0) {}
+DonorType::DonorType() : MemberType(), amountDonated(0.0) {}
 
 DonorType::DonorType(const string& newFirstName, 
 	const string& newLastName,

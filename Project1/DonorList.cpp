@@ -12,8 +12,8 @@
 	CSA 250
 	Project 1
 */
+
 #include "DonorList.h";
-#include "DonorType.h";
 #include <iostream>;
 #include <string>;
 
@@ -25,23 +25,21 @@ void DonorList::addDonor(const string& newFirstName,
 	const string& newLastName, int newMembershipNo,
 	double newAmountDonated)
 {
+	DonorType newDonor = DonorType(newFirstName, newLastName,
+		newMembershipNo, newAmountDonated);
+
 	if (count == 0)
 	{
-		ptrToFirst = new Node(DonorType(newFirstName, newLastName,
-			newMembershipNo, newAmountDonated), nullptr);
-
+		ptrToFirst = new Node(newDonor, nullptr);
 		ptrToLast = ptrToFirst;
 	}
 	else
 	{
-		ptrToLast->setPtrToNext(new Node(DonorType(newFirstName,
-			newLastName, newMembershipNo,
-			newAmountDonated), nullptr));
-
+		ptrToLast->setPtrToNext(new Node(newDonor, nullptr));
 		ptrToLast = ptrToLast->getPtrToNext();
 	}
 
-	count++;
+	++count;
 }
 
 bool DonorList::isEmpty() const
@@ -61,7 +59,7 @@ double DonorList::getTotalDonations() const
 
 	while (currentNode != nullptr)
 	{
-		donationTotal += currentNode->getAmountDonated();
+		donationTotal += currentNode->getDonor().getAmountDonated();
 		currentNode = currentNode->getPtrToNext();
 	}
 
@@ -70,7 +68,7 @@ double DonorList::getTotalDonations() const
 
 void DonorList::deleteDonor(int membershipNo)
 {
-	if (ptrToFirst->getMembershipNo() == membershipNo)
+	if (ptrToFirst->getDonor().getMembershipNo() == membershipNo)
 	{
 		Node* currentNode = ptrToFirst;
 		ptrToFirst = ptrToFirst->getPtrToNext();
@@ -85,13 +83,13 @@ void DonorList::deleteDonor(int membershipNo)
 		Node* currentNode = ptrToFirst->getPtrToNext();
 		while (!found && currentNode != nullptr)
 		{
-			if (currentNode->getMembershipNo() == membershipNo)
+			if (currentNode->getDonor().getMembershipNo() == membershipNo)
 			{
 				trailCurrent->setPtrToNext(currentNode->getPtrToNext());
 				delete currentNode;
 				currentNode = nullptr;
 				--count;
-				found == true;
+				found = true;
 			}
 			else
 			{
@@ -118,15 +116,18 @@ void DonorList::createList()
 	{
 		for (auto elem : copyDonors)
 		{
-			addDonor(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
+			addDonor(elem.getFirstName(), 
+				elem.getLastName(), 
+				elem.getMembershipNo(), 
+				elem.getAmountDonated());
 		}
 	}
 }
 
 bool DonorList::searchID(int membershipNo) const 
 {
-	if (ptrToFirst->getMembershipNo() == membershipNo
-		|| ptrToLast->getMembershipNo() == membershipNo)
+	if (ptrToFirst->getDonor().getMembershipNo() == membershipNo
+		|| ptrToLast->getDonor().getMembershipNo() == membershipNo)
 	{
 		return true;
 	}
@@ -136,7 +137,7 @@ bool DonorList::searchID(int membershipNo) const
 
 		while (currentNode != nullptr)
 		{
-			if (currentNode->getMembershipNo() == membershipNo)
+			if (currentNode->getDonor().getMembershipNo() == membershipNo)
 				return true;
 			else
 				currentNode = currentNode->getPtrToNext();
@@ -151,7 +152,7 @@ void DonorList::printAllDonors() const
 
 	while (currentNode != nullptr)
 	{
-		currentNode->printMemberInfo();
+		currentNode->getDonor().printMemberInfo();
 		currentNode = currentNode->getPtrToNext();
 	}
 }
@@ -162,7 +163,7 @@ void DonorList::printAllDonations() const
 
 	while (currentNode != nullptr)
 	{
-		currentNode->printDonation();
+		currentNode->getDonor().printDonation();
 		currentNode = currentNode->getPtrToNext();
 	}
 }
