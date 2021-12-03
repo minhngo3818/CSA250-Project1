@@ -31,7 +31,7 @@ DonorList::DonorList(const DonorList& listToCopy)
 			currentNodeToCopy->getDonor().getMembershipNo(),
 			currentNodeToCopy->getDonor().getAmountDonated());
 		count++;
-		currentNodeToCopy->getPtrToNext();
+		currentNodeToCopy = currentNodeToCopy->getPtrToNext();
 	}
 
 }
