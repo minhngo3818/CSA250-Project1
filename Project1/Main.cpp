@@ -13,11 +13,8 @@
 	Project 1
 */
 
-#include "DonorType.h"
-#include "MemberType.h"
 #include "DonorList.h"
 #include "Interface.h"
-#include "Database.h"
 
 #include <iostream>
 #include <iomanip>
@@ -30,9 +27,12 @@ int main()
 	
 	DonorList DList;
 	DList.createList();
-	displayMenu();
-	processSelection(DList);
-
+	
+	if (!DList.isEmpty())
+	{
+		displayMenu();
+		processSelection(DList);
+	}
 	/*
 	DonorList listA;
 	listA.createList();
