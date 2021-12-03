@@ -27,7 +27,7 @@ int main()
 	
 	DonorList DList;
 	DList.createList();
-	/*
+	
 	if (!DList.isEmpty())
 	{
 		displayMenu();
@@ -35,7 +35,6 @@ int main()
 	}
 	
 	system("Pause");
-	*/
 
 	/*
 	DonorList listA;
@@ -150,7 +149,7 @@ int main()
 	cout << "\n--------Test copy longer calling oibj---------\n";
 
 	//----------------------------------------------------------------
-	// => Test list 2 has 2 element: passed with new update
+	// => Test list 2 has 1 element: passed with new update
 	// => Test list 2 has more than 2 element: passed with new update
 	//----------------------------------------------------------------
 
@@ -194,8 +193,16 @@ int main()
 	list2.printAllDonations();
 	*/
 
-/*
+	/*
 	//copyCallingObjShorter()
+
+	cout << "\n--------Test copy shorter calling oibj---------\n\n";
+
+	//----------------------------------------------------------------
+	// => Test list 2 has 2 element:  passed with update version
+	// => Test list 2 has more than 2 element: passed with update version 
+	//----------------------------------------------------------------
+
 	DonorList list1;
 	list1.addDonor("Hoa", "Ta", 123, 1000.01);
 	list1.addDonor("Minh", "Ngo", 1234, 1500.01);
@@ -206,7 +213,7 @@ int main()
 	list2.addDonor("Nick1", "Richardson", 123456, 2000.01);
 	list2.addDonor("Riana1", "Ali", 1234567, 2500.01);
 
-	cout << "print list1 \n";
+	cout << "\nprint list1 \n";
 	list1.printAllDonors();
 	list1.printAllDonations();
 
@@ -215,7 +222,7 @@ int main()
 	list2.printAllDonations();
 
 	list1 = list2;
-	cout << "after assign list1 = list2 \n";
+	cout << "\n--------After assign list1 = list2-----------\n";
 	cout << "print list1 \n";
 	list1.printAllDonors();
 	list1.printAllDonations();
@@ -224,17 +231,18 @@ int main()
 	list2.printAllDonors();
 	list2.printAllDonations();
 
-	cout << "Empty list1 \n";
-	list1.clearList();
-	cout << "print list1 \n";
-	list1.printAllDonors();
-	list1.printAllDonations();
-
-	cout << "print list2 \n";
-	list2.printAllDonors();
-	list2.printAllDonations();
-*/
+	cout << "Empty list2 \n";
 	
+	cout << "print list1 \n";
+	list1.printAllDonors();
+	list1.printAllDonations();
+
+	cout << "print list2 \n";
+	list2.clearList();
+	list2.printAllDonors();
+	list2.printAllDonations();
+
+	*/
 
 	return 0;
 }

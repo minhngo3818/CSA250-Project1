@@ -71,7 +71,7 @@ void deleteDonor(DonorList& aDonorList)
 		cin >> inputMembershipNo;
 
 		aDonorList.deleteDonor(inputMembershipNo);
-		cout << "  => Donor has been deleted.\n";
+		cout << "\n  => Donor has been deleted.\n";
 	}
 	
 }

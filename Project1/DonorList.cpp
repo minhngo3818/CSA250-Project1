@@ -52,6 +52,7 @@ void DonorList::addDonor(const string& newFirstName,
 			bool done = false;
 			Node* sortPtr = ptrToFirst->getPtrToNext();
 			Node* sortPtrTrail = ptrToFirst;
+
 			while (!done)
 			{
 				if (sortPtr == nullptr)
@@ -60,13 +61,15 @@ void DonorList::addDonor(const string& newFirstName,
 					done = true;
 				else
 				{
-				sortPtr = sortPtr->getPtrToNext();
-				sortPtrTrail = sortPtrTrail->getPtrToNext();
+					sortPtr = sortPtr->getPtrToNext();
+					sortPtrTrail = sortPtrTrail->getPtrToNext();
 				}
 			}
+
 			sortPtrTrail->setPtrToNext(new Node(newDonor, sortPtr));
 		}
 	}
+
 	++count;
 }
 
