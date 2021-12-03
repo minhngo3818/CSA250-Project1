@@ -62,8 +62,9 @@ DonorList& DonorList::operator=(const DonorList& listToCopy)
 		{
 			return copyCallingObjShorter(listToCopy);
 		}
-
 	}
+
+	return *this;
 }
 
 DonorList& DonorList::copyCallingObjEmpty(const DonorList& listToCopy)

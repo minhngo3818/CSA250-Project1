@@ -44,22 +44,19 @@ int main()
 
 	listA.printAllDonations();
 
-
-
 	//Test copy constructor
-	cout << "created list1, print list2" << endl;
+	cout << "\ncreated list1, print list2" << endl;
 	DonorList listB(listA);
 	listA.printAllDonors();
 	listA.printAllDonations();
 
-	cout << "the output of list2 should be the same" << endl;
+	cout << "\nthe output of list2 should be the same" << endl;
 	listB.printAllDonors();
 	listB.printAllDonations();
-
+	*/
 
 	// test the copy assignment operator
 
-	*/
 	/*
 	//copyCallingObjEmpty()
 	DonorList list1;
@@ -78,7 +75,7 @@ int main()
 	list2.printAllDonations();
 
 	list1 = list2;
-	cout << "after assign list1 = list2 \n";
+	cout << "\n-------After assign list1 = list2-------- \n";
 	cout << "print list1 \n";
 	list1.printAllDonors();
 	list1.printAllDonations();
@@ -96,7 +93,6 @@ int main()
 	cout << "print list2 \n";
 	list2.printAllDonors();
 	list2.printAllDonations();
-
 	*/
 
 	/*
