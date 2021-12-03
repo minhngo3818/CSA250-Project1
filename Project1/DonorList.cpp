@@ -13,12 +13,12 @@
 	Project 1
 */
 
-#include "DonorList.h";
-#include "DonorType.h";
+#include "DonorList.h"
+#include "DonorType.h"
 
-#include <iostream>;
-#include <set>;
-#include <string>;
+#include <iostream>
+#include <set>
+#include <string>
 
 using namespace std;
 
