@@ -27,7 +27,7 @@ void displayMenu()
 		<< "    1. Add a donor\n"
 		<< "    2. Delete a donor\n"
 		<< "    3. Print all donors\n"
-		<< "    4. To exit\n";
+		<< "    4: To exit\n";
 }
 
 void addDonor(DonorList& aDonorList)
@@ -36,15 +36,15 @@ void addDonor(DonorList& aDonorList)
 	int inputMembershipNo;
 	double inputAmountDonated;
 
-	cout << "\n  => Enter donor's first name: ";
+	cout << "  => Enter donor's first name: ";
 	cin >> inputFirstName;
-	cout << "\n  => Enter donor's last name: ";
+	cout << "  => Enter donor's last name: ";
 	cin >> inputLastName;
-	cout << "\n  => Enter donor's membership number: ";
+	cout << "  => Enter donor's membership number: ";
 	cin >> inputMembershipNo;
-	cout << "\n  => Enter amount donated: $";
+	cout << "  => Enter amount donated: $ ";
 	cin >> inputAmountDonated;
-	cout << "\n\n  => Donor has been added.\n";
+	cout << "\n  => Donor has been added.\n";
 
 	aDonorList.addDonor(inputFirstName, inputLastName, inputMembershipNo, inputAmountDonated);
 }
@@ -52,9 +52,9 @@ void addDonor(DonorList& aDonorList)
 void deleteDonor(DonorList& aDonorList)
 {
 	int inputMembershipNo;
-	cout << "\n  => Enter donor's membership number: ";
+	cout << "  => Enter donor's membership number: ";
 	cin >> inputMembershipNo;
-	cout << "\n\n  => Donor has been deleted.\n";
+	cout << "\n  => Donor has been deleted.\n";
 
 	aDonorList.deleteDonor(inputMembershipNo);
 }
