@@ -17,7 +17,6 @@
 
 using namespace std;
 
-
 MemberType::MemberType() : firstName("N/A"),
 	lastName("N/A"), membershipNo(0) {}
 

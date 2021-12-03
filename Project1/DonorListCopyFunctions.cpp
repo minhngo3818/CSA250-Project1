@@ -128,11 +128,12 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 	while (currentNodeToCopy != nullptr)
 	{
 		currentNode->setDonor(currentNodeToCopy->getDonor());
+		ptrToLast = currentNode;
 		currentNode = currentNode->getPtrToNext();
 		currentNodeToCopy = currentNodeToCopy->getPtrToNext();
 	}
 
-	ptrToLast = currentNode; //this is the last node after copying
+	//ptrToLast = currentNode; //this is the last node after copying
 
 	Node* currentNodeToDelete = currentNode;
 
@@ -144,7 +145,7 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 	}
 
 	// Update numOfNodes
-	count -= listToCopy.count;
+	count = listToCopy.count;
 
 	return *this;
 }
@@ -175,6 +176,7 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 		currentNodeToCopy = currentNodeToCopy->getPtrToNext();
 		ptrToLast = ptrToLast->getPtrToNext();
 	}
+	count = listToCopy.count;
 
 	return *this;
 }

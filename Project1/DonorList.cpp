@@ -203,16 +203,14 @@ void DonorList::printAllDonations() const
 
 void DonorList::clearList()
 {
-	Node* trailCurrent = ptrToFirst;
-	Node* currentNode = ptrToFirst->getPtrToNext();
-	while (currentNode != nullptr)
+	Node* temp = ptrToFirst;
+	while (temp != nullptr)
 	{
-		currentNode = currentNode->getPtrToNext();
-		delete trailCurrent;
-		trailCurrent = currentNode;
+		ptrToFirst = ptrToFirst->getPtrToNext();
+		delete temp;
+		temp = ptrToFirst;
 	}
-
-	ptrToFirst = ptrToLast = nullptr;
+	ptrToLast = nullptr;
 	count = 0;
 }
 
