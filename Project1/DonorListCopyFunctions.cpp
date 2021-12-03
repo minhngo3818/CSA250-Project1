@@ -134,8 +134,7 @@ DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 		currentNodeToCopy = currentNodeToCopy->getPtrToNext();
 	}
 
-	//ptrToLast = currentNode; //this is the last node after copying
-
+	ptrToLast->setPtrToNext(nullptr);
 	Node* currentNodeToDelete = currentNode;
 
 	while (currentNode != nullptr)
@@ -157,7 +156,7 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 	Node* currentNodeToCopy = listToCopy.ptrToFirst;
 
 	//the loop needs to stop before the lasy node of the calling obj
-	for (int i = 0; i < count; ++i)
+	while(currentNode != nullptr)
 	{
 		currentNode->setDonor(currentNodeToCopy->getDonor());
 		currentNode = currentNode->getPtrToNext();
@@ -165,8 +164,6 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 	}
 
 	//create additional nodes
-	//Node *thisTemp2 = thisTemp;
-
 	while (currentNodeToCopy != nullptr)
 	{
 		addDonor(currentNodeToCopy->getDonor().getFirstName(),
@@ -175,7 +172,6 @@ DonorList& DonorList::copyCallingObjShorter(const DonorList& listToCopy)
 			currentNodeToCopy->getDonor().getAmountDonated());
 
 		currentNodeToCopy = currentNodeToCopy->getPtrToNext();
-		ptrToLast = ptrToLast->getPtrToNext();
 	}
 	count = listToCopy.count;
 
