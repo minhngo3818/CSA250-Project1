@@ -123,27 +123,40 @@ DonorList& DonorList::copyObjectsSameLength(const DonorList& listToCopy)
 
 DonorList& DonorList::copyCallingObjLonger(const DonorList& listToCopy)
 {
-	Node* currentNode = ptrToFirst;
-	Node* currentNodeToCopy = listToCopy.ptrToFirst;
-
-	while (currentNodeToCopy != nullptr)
+	if (listToCopy.count == 1)
 	{
-		currentNode->setDonor(currentNodeToCopy->getDonor());
-		ptrToLast = currentNode;
-		currentNode = currentNode->getPtrToNext();
-		currentNodeToCopy = currentNodeToCopy->getPtrToNext();
+		ptrToFirst = ptrToLast;
+		ptrToLast->getDonor().setDonorInfo(
+			listToCopy.ptrToFirst->getDonor().getFirstName(),
+			listToCopy.ptrToFirst->getDonor().getLastName(),
+			listToCopy.ptrToFirst->getDonor().getMembershipNo(),
+			listToCopy.ptrToFirst->getDonor().getAmountDonated());
 	}
 
-	ptrToLast->setPtrToNext(nullptr);
-	Node* currentNodeToDelete = currentNode;
-
-	while (currentNode != nullptr)
+	else 
 	{
-		currentNode = currentNode->getPtrToNext();
-		delete currentNodeToDelete;
-		currentNodeToDelete = currentNode;
-	}
+		Node* currentNode = ptrToFirst;
+		Node* currentNodeToCopy = listToCopy.ptrToFirst;
 
+		while (currentNodeToCopy != nullptr)
+		{
+			currentNode->setDonor(currentNodeToCopy->getDonor());
+			ptrToLast = currentNode;
+			currentNode = currentNode->getPtrToNext();
+			currentNodeToCopy = currentNodeToCopy->getPtrToNext();
+		}
+
+		ptrToLast->setPtrToNext(nullptr);
+		Node* currentNodeToDelete = currentNode;
+
+		while (currentNode != nullptr)
+		{
+			currentNode = currentNode->getPtrToNext();
+			delete currentNodeToDelete;
+			currentNodeToDelete = currentNode;
+		}
+	}
+	
 	// Update numOfNodes
 	count = listToCopy.count;
 
