@@ -44,19 +44,36 @@ void addDonor(DonorList& aDonorList)
 	cin >> inputMembershipNo;
 	cout << "  => Enter amount donated: $ ";
 	cin >> inputAmountDonated;
-	cout << "\n  => Donor has been added.\n";
-
-	aDonorList.addDonor(inputFirstName, inputLastName, inputMembershipNo, inputAmountDonated);
+	
+	if (aDonorList.searchID(inputMembershipNo))
+	{
+		cout << "\n  => Member ID has been used.\n";
+	}
+	else
+	{
+		aDonorList.addDonor(inputFirstName, inputLastName,
+			inputMembershipNo, inputAmountDonated);
+		cout << "\n  => Donor has been added.\n";
+	}
+	
 }
 
 void deleteDonor(DonorList& aDonorList)
 {
-	int inputMembershipNo;
-	cout << "  => Enter donor's membership number: ";
-	cin >> inputMembershipNo;
-	cout << "\n  => Donor has been deleted.\n";
+	if (aDonorList.isEmpty())
+	{
+		cout << "  => List is empty.\n";
+	}
+	else
+	{
+		int inputMembershipNo;
+		cout << "  => Enter donor's membership number: ";
+		cin >> inputMembershipNo;
 
-	aDonorList.deleteDonor(inputMembershipNo);
+		aDonorList.deleteDonor(inputMembershipNo);
+		cout << "  => Donor has been deleted.\n";
+	}
+	
 }
 
 void printAllDonors(const DonorList& aDonorList)
@@ -69,8 +86,8 @@ void processSelection(DonorList& aDonorList)
 	// Prompts
 	string selectionPrompt = "\n  => Enter your selection: ";
 	string continuePrompt = "\n  => Would you like to continue? (y/n) ";
-	string goodbyeMessage = "\n  => Thank you for visiting our site!\n";
-	string wrongInputMessage = "\n  => Sorry. That is not a selection.\n";
+	string goodbyeMessage = "  => Thank you for visiting our site!\n\n";
+	string wrongInputMessage = "  => Sorry. That is not a selection.\n";
 
 	char userInput;
 	bool done = false;
@@ -78,7 +95,6 @@ void processSelection(DonorList& aDonorList)
 
 	while (!done)
 	{
-		// Notes: Assume user always types correct input
 
 		if (!firstTime) 
 			displayMenu();
@@ -87,20 +103,20 @@ void processSelection(DonorList& aDonorList)
 		cin >> userInput;
 		cout << endl;
 
-		if (userInput < '1' || userInput > '4')
+		if (userInput == '4')
 		{
 			done = true;
-			cout << wrongInputMessage;
+			cout << goodbyeMessage;
 		}
-		else if (userInput >= '1' && userInput <= '4')
+		else
 		{
-			if (userInput == '4')
+			if (userInput < '1' || userInput > '4')
 			{
-				done = true;
-				cout << goodbyeMessage;
+				cout << wrongInputMessage;
 			}
-			else
+			else if (userInput >= '1' && userInput < '4')
 			{
+
 				if (userInput == '1')
 				{
 					addDonor(aDonorList);
@@ -113,17 +129,19 @@ void processSelection(DonorList& aDonorList)
 				{
 					printAllDonors(aDonorList);
 				}
+			}
 
-				cout << continuePrompt;
-				cin >> userInput;
-				cout << endl;
+			cout << continuePrompt;
+			cin >> userInput;
+			cout << endl;
 
-				if (userInput != 'y')
-				{
-					done = true;
-					cout << goodbyeMessage;
-				}
+			if (userInput != 'y')
+			{
+				done = true;
+				cout << goodbyeMessage;
 			}
 		}
+		
+
 	}
 }
