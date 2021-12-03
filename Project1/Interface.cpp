@@ -71,6 +71,16 @@ void deleteDonor(DonorList& aDonorList)
 		cin >> inputMembershipNo;
 		aDonorList.deleteDonor(inputMembershipNo);
 		cout << "\n  => Donor has been deleted.\n";
+
+		/* @Liam Please remove line 73 and /* if Professor has not responded
+		int numOfDonorsBeforeDelete = aDonorList.getNoOfDonors();
+		aDonorList.deleteDonor(inputMembershipNo);
+
+		if (aDonorList.getNoOfDonors() < numOfDonorsBeforeDelete)
+			cout << "\n  => Donor has been deleted.\n";
+		else
+			cout << endl; 
+		*/
 	}
 	
 }
