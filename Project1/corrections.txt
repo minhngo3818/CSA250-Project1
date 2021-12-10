@@ -8,7 +8,7 @@
 
 ERRORS
 ---DonorType.h: Incorrect name header. Check all files.
----MemberType.h: Unnecessary inclusion of <iostream>. You need to include ONLY the headers needed in each file. Check all your files. - HOA FIXED IT ON MEMBERTYPE.H
+---MemberType.h: Unnecessary inclusion of <iostream>. You need to include ONLY the headers needed in each file. Check all your files. - HOA REMOVED #INCLUDE <IOSTREAM>, #INCLUDE <STRING> ON MEMBERTYPE.H
 ---Main.cpp: Identifier DList does not follow the course standards.
 ---DonorList.h: This file does not use Database.h. You need to include ONLY the headers needed in each file. Check all your files. - HOA REMOVED #INCLUDE <DATABASE.H> ON DONORLIST.H
 ---DonorList.h: Do not indent “public” or “private”. - HOA FIXED INDENTATION FOR MEMBERTYPE.H, DONORTYPE.H, DONORLIST.H
