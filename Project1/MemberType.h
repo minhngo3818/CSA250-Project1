@@ -20,27 +20,27 @@
 
 class MemberType
 {
-	public:
-		MemberType();
-		MemberType(const std::string& newFirstName,
-			const std::string& newLastName, int newMembershipNo);
+public:
+	MemberType();
+	MemberType(const std::string& newFirstName,
+		const std::string& newLastName, int newMembershipNo);
 
-		void setMemberInfo(const std::string& newFirstName,
-			const std::string& newLastName, int newMembershipNo);
+	void setMemberInfo(const std::string& newFirstName,
+		const std::string& newLastName, int newMembershipNo);
 
-		std::string getFirstName() const;
-		std::string getLastName() const;
-		int getMembershipNo() const;
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	int getMembershipNo() const;
 
-		void printName() const;
-		void printMemberInfo() const;
+	void printName() const;
+	void printMemberInfo() const;
 
-		~MemberType();
+	~MemberType();
 		
-	private:
-		std::string firstName;
-		std::string lastName;
-		int membershipNo;
+private:
+	std::string firstName;
+	std::string lastName;
+	int membershipNo;
 
 };
 
