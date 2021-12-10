@@ -17,7 +17,6 @@
 #define DONORLIST_H
 
 #include "DonorType.h"
-#include "Database.h"
 
 class Node : public DonorType
 {
