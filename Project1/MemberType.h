@@ -17,7 +17,6 @@
 #define MEMBERTYPE_H
 
 #include <string>
-#include <iostream>
 
 class MemberType
 {
