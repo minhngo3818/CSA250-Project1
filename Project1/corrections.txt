@@ -1,0 +1,22 @@
+---Correct all the errors. Some are in multiple files, even if it does not say so; therefore, make sure you check ALL files for each type of error.
+---Points will be detracted for each error that is not corrected.
+---My advice is to have two members of the team go over the corrections (one at a time, not together). When working on real software, the code goes through at least four different checks, so what you are doing here is very similar to what you will be doing in the future.
+---While correcting, if you find an error that is not listed, correct it. 
+---If in the final copy I find an error that I missed, I will not detract points, but if I find an error that is caused by your correction, then I will detract points.
+---How can you get full credit? (1) By correcting ALL errors listed (in any file, even if not indicated), (2) by making sure that your program compiles, and (3) by producing the output exactly as it looks in the screenshots given.
+------------
+
+ERRORS
+---DonorType.h: Incorrect name header. Check all files.
+---MemberType.h: Unnecessary inclusion of <iostream>. You need to include ONLY the headers needed in each file. Check all your files.
+---Main.cpp: Identifier DList does not follow the course standards.
+---DonorList.h: This file does not use Database.h. You need to include ONLY the headers needed in each file. Check all your files.
+---DonorList.h: Do not indent “public” or “private”.
+---DonorList default constructor. Check optimization tip # 19. Read the whole paragraph and make all appropriate corrections.
+---Interface.cpp: Function addDonor (this was also found on other functions/files). Review optimization tips # 19. 
+---Interface.cpp: Function deleteDonor. Check optimization tip # 25 and make all appropriate corrections.
+---Interface.cpp: Function processSelection. There is no need to create all those strings. You are using them only once, so just use literals, so that you don’t waste any memory.
+---DonorList copy assignment operator: Not all paths return a value.
+---DonorList copy functions (helper functions): They should all be void functions, because they only copy. Only the copy assignment operator is the one that returns a reference to the calling object.
+OUTPUT 
+---Selection 2: Incorrect output after entering membership number. Check the expected output (screenshots).
