@@ -9,13 +9,12 @@
 
 	November 22, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
 #include "DonorType.h"
 
-#include <iostream>
 #include <iomanip>
 using namespace std;
 

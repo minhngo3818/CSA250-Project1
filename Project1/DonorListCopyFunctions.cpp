@@ -9,11 +9,12 @@
 
 	November 29, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
 #include "DonorList.h"
+
 using namespace std;
 
 DonorList::DonorList(const DonorList& listToCopy)
@@ -48,24 +49,26 @@ DonorList& DonorList::operator=(const DonorList& listToCopy)
 
 		if (count == 0)
 		{
-			return copyCallingObjEmpty(listToCopy);
+			copyCallingObjEmpty(listToCopy);
 		}
 		else if (count == numOfDonorsToCopy)
 		{
-			return copyObjectsSameLength(listToCopy);
+			copyObjectsSameLength(listToCopy);
 		}
 		else if (count > numOfDonorsToCopy)
 		{
-			return copyCallingObjLonger(listToCopy);
+			copyCallingObjLonger(listToCopy);
 		}
 		else if (count < numOfDonorsToCopy)
 		{
-			return copyCallingObjShorter(listToCopy);
+			copyCallingObjShorter(listToCopy);
 		}
 	}
+
+	return *this;
 }
 
-DonorList& DonorList::copyCallingObjEmpty
+void DonorList::copyCallingObjEmpty
 (const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
@@ -90,11 +93,9 @@ DonorList& DonorList::copyCallingObjEmpty
 		}
 
 	}
-
-	return *this;
 }
 
-DonorList& DonorList::copyObjectsSameLength
+void DonorList::copyObjectsSameLength
 (const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
@@ -117,11 +118,9 @@ DonorList& DonorList::copyObjectsSameLength
 			currentNodeToCopy = currentNodeToCopy->getPtrToNext();
 		}
 	}
-
-	return *this;
 }
 
-DonorList& DonorList::copyCallingObjLonger
+void DonorList::copyCallingObjLonger
 (const DonorList& listToCopy)
 {
 	if (listToCopy.count == 1)
@@ -160,11 +159,9 @@ DonorList& DonorList::copyCallingObjLonger
 	
 	// Update numOfNodes
 	count = listToCopy.count;
-
-	return *this;
 }
 
-DonorList& DonorList::copyCallingObjShorter
+void DonorList::copyCallingObjShorter
 (const DonorList& listToCopy)
 {
 	if (listToCopy.count == 2)
@@ -203,8 +200,6 @@ DonorList& DonorList::copyCallingObjShorter
 	}
 	
 	count = listToCopy.count;
-
-	return *this;
 }
 
 

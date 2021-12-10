@@ -9,16 +9,12 @@
 
 	November 24, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
 #include "DonorList.h"
-#include "DonorType.h"
-
-#include <iostream>
-#include <set>
-#include <string>
+#include "Database.h"
 
 using namespace std;
 

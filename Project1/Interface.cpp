@@ -9,13 +9,12 @@
 
 	November 27, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
 #include "Interface.h"
 
-#include <iostream>
 using namespace std;
 
 void displayMenu()
