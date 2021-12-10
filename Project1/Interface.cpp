@@ -32,9 +32,10 @@ void displayMenu()
 
 void addDonor(DonorList& aDonorList)
 {
-	string inputFirstName, inputLastName;
-	int inputMembershipNo;
-	double inputAmountDonated;
+	string inputFirstName = "";
+	string inputLastName = "";
+	int inputMembershipNo = 0;
+	double inputAmountDonated = 0.0;
 
 	cout << "  => Enter donor's first name: ";
 	cin >> inputFirstName;
@@ -47,7 +48,7 @@ void addDonor(DonorList& aDonorList)
 	
 	if (aDonorList.searchID(inputMembershipNo))
 	{
-		cout << "\n  => Member ID has been used.\n";
+		cerr << "\n  => Member ID has been used.\n";
 	}
 	else
 	{
@@ -62,7 +63,7 @@ void deleteDonor(DonorList& aDonorList)
 {
 	if (aDonorList.isEmpty())
 	{
-		cout << "The database has no donors.\n";
+		cerr << "The database has no donors.\n";
 	}
 	else
 	{
@@ -70,19 +71,8 @@ void deleteDonor(DonorList& aDonorList)
 		cout << "  => Enter donor's membership number: ";
 		cin >> inputMembershipNo;
 		aDonorList.deleteDonor(inputMembershipNo);
-		cout << "  => Donor has been deleted.\n";
-
-		/* @Liam Please remove line 73 and /* if Professor has not responded
-		int numOfDonorsBeforeDelete = aDonorList.getNoOfDonors();
-		aDonorList.deleteDonor(inputMembershipNo);
-
-		if (aDonorList.getNoOfDonors() < numOfDonorsBeforeDelete)
-			cout << "\n  => Donor has been deleted.\n";
-		else
-			cout << endl; 
-		*/
+		cout << "\n  => Donor has been deleted.\n";
 	}
-	
 }
 
 void printAllDonors(const DonorList& aDonorList)
@@ -92,16 +82,7 @@ void printAllDonors(const DonorList& aDonorList)
 
 void processSelection(DonorList& aDonorList)
 {
-	// Prompts
-	string selectionPrompt = "\n  => Enter your selection: ";
-	string continuePrompt = 
-		"\n  => Would you like to continue? (y/n) ";
-	string goodbyeMessage = 
-		"  => Thank you for visiting our site!\n\n";
-	string wrongInputMessage = 
-		"  => Sorry. That is not a selection.\n";
-
-	char userInput;
+	char userInput = 'c';
 	bool done = false;
 	bool firstTime = true;
 
@@ -111,20 +92,20 @@ void processSelection(DonorList& aDonorList)
 		if (!firstTime) 
 			displayMenu();
 		firstTime = false;
-		cout << selectionPrompt;
+		cout << "\n  => Enter your selection: ";
 		cin >> userInput;
 		cout << endl;
 
 		if (userInput == '4')
 		{
 			done = true;
-			cout << goodbyeMessage;
+			cout << "  => Thank you for visiting our site!\n";
 		}
 		else
 		{
 			if (userInput < '1' || userInput > '4')
 			{
-				cout << wrongInputMessage;
+				cout << "  => Sorry. That is not a selection.\n";
 			}
 			else if (userInput >= '1' && userInput < '4')
 			{
@@ -143,14 +124,14 @@ void processSelection(DonorList& aDonorList)
 				}
 			}
 
-			cout << continuePrompt;
+			cout << "\n  => Would you like to continue? (y/n) ";
 			cin >> userInput;
 			cout << endl;
 
 			if (userInput != 'y')
 			{
 				done = true;
-				cout << goodbyeMessage;
+				cout << "  => Thank you for visiting our site!\n";
 			}
 		}
 	}
