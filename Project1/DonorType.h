@@ -20,30 +20,30 @@
 
 class DonorType : public MemberType
 {
-	public:
-		DonorType();
-		DonorType(const std::string& newFirstName, 
-				const std::string& newLastName,
-				int newMembershipNo, 
-				double newAmountDonated);
+public:
+	DonorType();
+	DonorType(const std::string& newFirstName, 
+			const std::string& newLastName,
+			int newMembershipNo, 
+			double newAmountDonated);
 
-		void setDonorInfo(const std::string& newFirstName, 
-				const std::string& newLastName,
-				int newMembershipNo, 
-				double newAmountDonated);
-		void setAmountDonated(double newAmountDonated);
+	void setDonorInfo(const std::string& newFirstName, 
+			const std::string& newLastName,
+			int newMembershipNo, 
+			double newAmountDonated);
+	void setAmountDonated(double newAmountDonated);
 
-		double getAmountDonated() const;
+	double getAmountDonated() const;
 
-		void printDonor() const;
-		void printDonation() const;
+	void printDonor() const;
+	void printDonation() const;
 
-		~DonorType();
+	~DonorType();
 		
-		bool operator<(const DonorType& otherDonor) const;
+	bool operator<(const DonorType& otherDonor) const;
 
-	private:
-		double amountDonated;
+private:
+	double amountDonated;
 };
 
 #endif
