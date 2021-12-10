@@ -11,7 +11,7 @@ ERRORS
 ---MemberType.h: Unnecessary inclusion of <iostream>. You need to include ONLY the headers needed in each file. Check all your files. - HOA FIXED
 ---Main.cpp: Identifier DList does not follow the course standards.
 ---DonorList.h: This file does not use Database.h. You need to include ONLY the headers needed in each file. Check all your files.
----DonorList.h: Do not indent “public” or “private”.
+---DonorList.h: Do not indent “public” or “private”. - HOA FIXED INDENTATION FOR MEMBERTYPE.H, DONORTYPE.H, DONORLIST.H
 ---DonorList default constructor. Check optimization tip # 19. Read the whole paragraph and make all appropriate corrections.
 ---Interface.cpp: Function addDonor (this was also found on other functions/files). Review optimization tips # 19. 
 ---Interface.cpp: Function deleteDonor. Check optimization tip # 25 and make all appropriate corrections.
