@@ -9,7 +9,7 @@
 
 	November 22, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
@@ -17,8 +17,6 @@
 #define DONORTYPE_H
 
 #include "MemberType.h"
-
-#include <string>
 
 class DonorType : public MemberType
 {

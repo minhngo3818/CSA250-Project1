@@ -9,7 +9,7 @@
 
 	November 24, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
@@ -19,7 +19,6 @@
 #include "DonorType.h"
 
 #include <set>
-#include <string>
 
 std::set<DonorType> getData();
 

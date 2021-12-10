@@ -9,7 +9,7 @@
 
 	November 24, 2021
 
-	CSA 250
+	CS A250
 	Project 1
 */
 
@@ -18,8 +18,6 @@
 
 #include "DonorType.h"
 #include "Database.h"
-
-#include <string>
 
 class Node : public DonorType
 {
@@ -78,10 +76,10 @@ class DonorList : public DonorType
 		DonorList& operator=(const DonorList& listToCopy);		
 
 	private:
-		DonorList& copyCallingObjEmpty(const DonorList& listToCopy);	
-		DonorList& copyObjectsSameLength(const DonorList& listToCopy);	
-		DonorList& copyCallingObjLonger(const DonorList& listToCopy);	
-		DonorList& copyCallingObjShorter(const DonorList& listToCopy);	
+		void copyCallingObjEmpty(const DonorList& listToCopy);	
+		void copyObjectsSameLength(const DonorList& listToCopy);	
+		void copyCallingObjLonger(const DonorList& listToCopy);	
+		void copyCallingObjShorter(const DonorList& listToCopy);	
 
 		Node* ptrToFirst;
 		Node* ptrToLast;
