@@ -82,7 +82,7 @@ private:
 
 	Node* ptrToFirst;
 	Node* ptrToLast;
-	int count;
+	int count = 0;
 
 };
 
