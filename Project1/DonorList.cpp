@@ -183,23 +183,29 @@ bool DonorList::searchID(int membershipNo) const
 
 void DonorList::printAllDonors() const
 {
-	Node* currentNode = ptrToFirst;
-
-	while (currentNode != nullptr)
+	if (count != 0)
 	{
-		currentNode->getDonor().printMemberInfo();
-		currentNode = currentNode->getPtrToNext();
+		Node* currentNode = ptrToFirst;
+
+		while (currentNode != nullptr)
+		{
+			currentNode->getDonor().printMemberInfo();
+			currentNode = currentNode->getPtrToNext();
+		}
 	}
 }
 
 void DonorList::printAllDonations() const
 {
-	Node* currentNode = ptrToFirst;
-
-	while (currentNode != nullptr)
+	if (count != 0)
 	{
-		currentNode->getDonor().printDonation();
-		currentNode = currentNode->getPtrToNext();
+		Node* currentNode = ptrToFirst;
+
+		while (currentNode != nullptr)
+		{
+			currentNode->getDonor().printDonation();
+			currentNode = currentNode->getPtrToNext();
+		}
 	}
 }
 
