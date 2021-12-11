@@ -29,7 +29,7 @@ public:
 	Node* getPtrToNext() const { return ptrToNext; }
 	DonorType& getDonor() { return donor; }
 
-	void setDonor(DonorType newDonor)
+	void setDonor(const DonorType& newDonor)
 	{
 		donor = newDonor; 
 	}
