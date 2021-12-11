@@ -15,6 +15,7 @@
 
 #include "MemberType.h"
 
+#include <iostream>
 using namespace std;
 
 MemberType::MemberType() : firstName("N/A"),

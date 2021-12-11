@@ -19,13 +19,13 @@ using namespace std;
 
 int main()
 {
-	DonorList DList;
-	DList.createList();
+	DonorList testDonorList;
+	testDonorList.createList();
 	
-	if (!DList.isEmpty())
+	if (!testDonorList.isEmpty())
 	{
 		displayMenu();
-		processSelection(DList);
+		processSelection(testDonorList);
 	}
 
 	return 0;
