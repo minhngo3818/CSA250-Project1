@@ -7,16 +7,20 @@
 ------------
 
 ERRORS
----DonorType.h: Incorrect name header. Check all files.
----MemberType.h: Unnecessary inclusion of <iostream>. You need to include ONLY the headers needed in each file. Check all your files. - HOA REMOVED #INCLUDE <IOSTREAM>, #INCLUDE <STRING> ON MEMBERTYPE.H
----Main.cpp: Identifier DList does not follow the course standards.
+---DonorType.h: Incorrect name header. Check all files. - MINH FIXED
+---MemberType.h: Unnecessary inclusion of <iostream>. You need to include ONLY the headers needed in each file. Check all your files. - HOA REMOVED #INCLUDE <IOSTREAM>, #INCLUDE <STRING> ON MEMBERTYPE.H 
+^ LIAM ADDED <iostream> to just the .cpps that require it
+
+---Main.cpp: Identifier DList does not follow the course standards. - LIAM FIXED
 ---DonorList.h: This file does not use Database.h. You need to include ONLY the headers needed in each file. Check all your files. - HOA REMOVED #INCLUDE <DATABASE.H> ON DONORLIST.H
 ---DonorList.h: Do not indent “public” or “private”. - HOA FIXED INDENTATION FOR MEMBERTYPE.H, DONORTYPE.H, DONORLIST.H
----DonorList default constructor. Check optimization tip # 19. Read the whole paragraph and make all appropriate corrections.
----Interface.cpp: Function addDonor (this was also found on other functions/files). Review optimization tips # 19. 
----Interface.cpp: Function deleteDonor. Check optimization tip # 25 and make all appropriate corrections.
----Interface.cpp: Function processSelection. There is no need to create all those strings. You are using them only once, so just use literals, so that you don’t waste any memory.
+---DonorList default constructor. Check optimization tip # 19. Read the whole paragraph and make all appropriate corrections. - MINH FIXED, LIAM corrected string initializing
+---Interface.cpp: Function addDonor (this was also found on other functions/files). Review optimization tips # 19. - MINH FIXED
+---Interface.cpp: Function deleteDonor. Check optimization tip # 25 and make all appropriate corrections. - MINH FIXED
+---Interface.cpp: Function processSelection. There is no need to create all those strings. You are using them only once, so just use literals, so that you don’t waste any memory. - MINH FIXED
+
 ---DonorList copy assignment operator: Not all paths return a value.
 ---DonorList copy functions (helper functions): They should all be void functions, because they only copy. Only the copy assignment operator is the one that returns a reference to the calling object.
+
 OUTPUT 
----Selection 2: Incorrect output after entering membership number. Check the expected output (screenshots).
+---Selection 2: Incorrect output after entering membership number. Check the expected output (screenshots). - MINH FIXED

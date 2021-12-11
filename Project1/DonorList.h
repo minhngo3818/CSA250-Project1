@@ -21,7 +21,7 @@
 class Node : public DonorType
 {
 public:
-	Node() : donor(DonorType("", "", 0, 0.0)),
+	Node() : donor(DonorType("N/A", "N/A", 0, 0.0)),
 		ptrToNext(nullptr) {}
 	Node(DonorType newDonor, Node* newPtrToNext)
 		: donor(newDonor), ptrToNext(newPtrToNext) {}
@@ -82,7 +82,7 @@ private:
 
 	Node* ptrToFirst;
 	Node* ptrToLast;
-	int count;
+	int count = 0;
 
 };
 

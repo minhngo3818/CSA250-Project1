@@ -16,6 +16,7 @@
 #ifndef MEMBERTYPE_H
 #define MEMBERTYPE_H
 
+#include <string>
 
 class MemberType
 {

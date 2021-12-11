@@ -16,6 +16,7 @@
 #include "DonorType.h"
 
 #include <iomanip>
+#include <iostream>
 using namespace std;
 
 DonorType::DonorType() : amountDonated(0.0) {}

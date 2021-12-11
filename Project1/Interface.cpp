@@ -15,6 +15,7 @@
 
 #include "Interface.h"
 
+#include <iostream>
 using namespace std;
 
 void displayMenu()
@@ -31,8 +32,8 @@ void displayMenu()
 
 void addDonor(DonorList& aDonorList)
 {
-	string inputFirstName = "";
-	string inputLastName = "";
+	string inputFirstName;
+	string inputLastName;
 	int inputMembershipNo = 0;
 	double inputAmountDonated = 0.0;
 

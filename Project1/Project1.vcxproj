@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,8 +147,6 @@
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemberType.cpp" />
-    <ClCompile Include="part A test.cpp" />
-    <ClCompile Include="part B test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Database.h" />
@@ -155,6 +154,9 @@
     <ClInclude Include="DonorType.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="MemberType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="corrections.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
