@@ -133,7 +133,6 @@ void DonorList::copyCallingObjLonger
 			listToCopy.ptrToFirst->getDonor().getMembershipNo(),
 			listToCopy.ptrToFirst->getDonor().getAmountDonated());
 	}
-
 	else 
 	{
 		Node* currentNode = ptrToFirst;
@@ -158,7 +157,6 @@ void DonorList::copyCallingObjLonger
 		}
 	}
 	
-	// Update numOfNodes
 	count = listToCopy.count;
 }
 
