@@ -67,7 +67,7 @@ void deleteDonor(DonorList& aDonorList)
 	}
 	else
 	{
-		int inputMembershipNo;
+		int inputMembershipNo = 0;
 		cout << "  => Enter donor's membership number: ";
 		cin >> inputMembershipNo;
 		aDonorList.deleteDonor(inputMembershipNo);
