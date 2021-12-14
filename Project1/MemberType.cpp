@@ -60,7 +60,4 @@ void MemberType::printMemberInfo() const
 	<< firstName << " " << lastName << endl;
 }
 
-MemberType::~MemberType()
-{
-	membershipNo = 0;
-}
+MemberType::~MemberType() {}
